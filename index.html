@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Madam's Boutique — Pakistan's premier women's fashion destination featuring Sapphire, Maria B, Khaadi, Gul Ahmed, Sana Safinaz, Junaid Jamshed & Saya collections.">
+    <title>Madam's Boutique — Where Style Meets Elegance</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-boutique fixed-top" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 60" height="48">
+                    <defs>
+                        <linearGradient id="roseGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#C9A96E"/>
+                            <stop offset="100%" style="stop-color:#F2D4C2"/>
+                        </linearGradient>
+                    </defs>
+                    <text x="28" y="35" font-family="'Playfair Display', Georgia, serif" font-size="28" font-weight="700" fill="#6B2737" letter-spacing="1">
+                        Madam's
+                    </text>
+                    <text x="190" y="35" font-family="'Playfair Display', Georgia, serif" font-size="28" font-weight="700" fill="#6B2737" letter-spacing="1">Boutique</text>
+                    <path d="M33 8 L38 2 L40 6 L42 2 L47 8" stroke="#C9A96E" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="40" cy="1" r="1" fill="#C9A96E"/>
+                    <path d="M22 14 Q20 10 24 8 Q28 6 30 10" stroke="#C9A96E" stroke-width="1" fill="none" opacity="0.6"/>
+                    <path d="M48 14 Q50 10 46 8 Q42 6 40 10" stroke="#C9A96E" stroke-width="1" fill="none" opacity="0.6"/>
+                    <text x="100" y="52" font-family="'Lato', Arial, sans-serif" font-size="10.5" fill="#C9A96E" letter-spacing="3" text-transform="uppercase">Where Style Meets Elegance</text>
+                </svg>
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars" style="color: var(--primary);"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html" id="nav-home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="brands.html" id="nav-brands">Brands</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="collection.html" id="nav-collection" role="button" data-bs-toggle="dropdown" aria-expanded="false">Collection</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="collection.html?category=stitched">Stitched</a></li>
+                            <li><a class="dropdown-item" href="collection.html?category=unstitched">Unstitched</a></li>
+                            <li><a class="dropdown-item" href="collection.html?category=accessories">Accessories</a></li>
+                            <li><a class="dropdown-item" href="collection.html?category=fragrances">Fragrances</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html" id="nav-gallery">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="compare.html" id="nav-compare">Compare</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html" id="nav-about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html" id="nav-contact">Contact</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav navbar-icons">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="searchToggle" aria-label="Search"><i class="fas fa-search"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="wishlistIcon" aria-label="Wishlist">
+                            <i class="fas fa-heart"></i>
+                            <span class="badge" id="wishlistCount">0</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="cartIcon" aria-label="Cart">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span class="badge" id="cartCount">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="search-overlay" id="searchOverlay">
+        <button class="close-search" id="closeSearch" aria-label="Close search"><i class="fas fa-times"></i></button>
+        <div class="search-box">
+            <input type="text" placeholder="Search for products, brands..." id="searchInput" autocomplete="off">
+        </div>
+    </div>
+
+    <section class="hero-section" id="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content">
+                    <span class="hero-badge">New Collection 2025</span>
+                    <h1 class="hero-title">Discover Your <span>Signature Style</span></h1>
+                    <p class="hero-subtitle">Curating Pakistan's finest fashion brands under one roof. From luxury unstitched fabrics to designer pret — find your perfect ensemble.</p>
+                    <div class="hero-buttons">
+                        <a href="collection.html" class="btn btn-accent-custom">Shop Now <i class="fas fa-arrow-right ms-2"></i></a>
+                        <a href="brands.html" class="btn btn-outline-custom" style="border-color: rgba(255,255,255,0.3); color: var(--white);">Explore Brands</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 hero-visual d-none d-lg-block">
+                    <div class="hero-visual-circle">
+                        <div class="hero-visual-inner">
+                            <div>
+                                <i class="fas fa-gem mb-3"></i>
+                                <h4 style="color: var(--accent); font-size: 1.4rem;">Premium Fashion</h4>
+                                <p style="color: rgba(201,169,110,0.6); font-size: 0.85rem;">7 Luxury Brands</p>
+                            </div>
+                        </div>
+                        <div class="floating-badge badge-1">
+                            <i class="fas fa-star"></i>
+                            <div class="info">
+                                <h6>100% Authentic</h6>
+                                <span>Verified Products</span>
+                            </div>
+                        </div>
+                        <div class="floating-badge badge-2">
+                            <i class="fas fa-truck"></i>
+                            <div class="info">
+                                <h6>Free Delivery</h6>
+                                <span>Orders above PKR 5,000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" id="categories">
+        <div class="container">
+            <div class="section-title animate-on-scroll">
+                <h2>Shop by Category</h2>
+                <p>Explore our curated collections across every style</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 animate-on-scroll">
+                    <a href="collection.html?category=stitched" class="text-decoration-none">
+                        <div class="category-card">
+                            <div class="category-bg" style="background: linear-gradient(135deg, #6B2737, #8a3a4d);">
+                                <i class="fas fa-tshirt category-icon"></i>
+                            </div>
+                            <div class="category-overlay">
+                                <h4>Stitched</h4>
+                                <p>Ready to Wear</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 animate-on-scroll">
+                    <a href="collection.html?category=unstitched" class="text-decoration-none">
+                        <div class="category-card">
+                            <div class="category-bg" style="background: linear-gradient(135deg, #C9A96E, #b08f52);">
+                                <i class="fas fa-scroll category-icon" style="color: var(--white);"></i>
+                            </div>
+                            <div class="category-overlay">
+                                <h4>Unstitched</h4>
+                                <p>Premium Fabrics</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 animate-on-scroll">
+                    <a href="collection.html?category=accessories" class="text-decoration-none">
+                        <div class="category-card">
+                            <div class="category-bg" style="background: linear-gradient(135deg, #F2D4C2, #e8c4b0);">
+                                <i class="fas fa-bag-shopping category-icon" style="color: var(--primary);"></i>
+                            </div>
+                            <div class="category-overlay">
+                                <h4>Accessories</h4>
+                                <p>Bags & Shoes</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 animate-on-scroll">
+                    <a href="collection.html?category=fragrances" class="text-decoration-none">
+                        <div class="category-card">
+                            <div class="category-bg" style="background: linear-gradient(135deg, #4a1a26, #2C2C2C);">
+                                <i class="fas fa-spray-can-sparkles category-icon"></i>
+                            </div>
+                            <div class="category-overlay">
+                                <h4>Fragrances</h4>
+                                <p>Luxury Perfumes</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="brands-marquee" id="brands-strip">
+        <div class="container-fluid overflow-hidden">
+            <div class="marquee-track" id="marqueeTrack">
+                <div class="brand-item"><i class="fas fa-gem"></i><span>Sapphire</span></div>
+                <div class="brand-item"><i class="fas fa-crown"></i><span>Maria B</span></div>
+                <div class="brand-item"><i class="fas fa-leaf"></i><span>Khaadi</span></div>
+                <div class="brand-item"><i class="fas fa-star"></i><span>Gul Ahmed</span></div>
+                <div class="brand-item"><i class="fas fa-feather-pointed"></i><span>Sana Safinaz</span></div>
+                <div class="brand-item"><i class="fas fa-mosque"></i><span>Junaid Jamshed</span></div>
+                <div class="brand-item"><i class="fas fa-palette"></i><span>Saya</span></div>
+                <div class="brand-item"><i class="fas fa-gem"></i><span>Sapphire</span></div>
+                <div class="brand-item"><i class="fas fa-crown"></i><span>Maria B</span></div>
+                <div class="brand-item"><i class="fas fa-leaf"></i><span>Khaadi</span></div>
+                <div class="brand-item"><i class="fas fa-star"></i><span>Gul Ahmed</span></div>
+                <div class="brand-item"><i class="fas fa-feather-pointed"></i><span>Sana Safinaz</span></div>
+                <div class="brand-item"><i class="fas fa-mosque"></i><span>Junaid Jamshed</span></div>
+                <div class="brand-item"><i class="fas fa-palette"></i><span>Saya</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" id="new-arrivals" style="background: var(--white);">
+        <div class="container">
+            <div class="section-title animate-on-scroll">
+                <h2>New Arrivals</h2>
+                <p>The latest from Pakistan's most loved fashion brands</p>
+            </div>
+            <div class="row g-4" id="newArrivalsGrid">
+
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="product-card">
+                        <div class="product-img-wrap">
+                            <img src="https://pk.sapphireonline.pk/dw/image/v2/BKSB_PRD/on/demandware.static/-/Sites-sapphire-master-catalog/default/dwd35bbd05/images/April26/9thApril26/PRS26CAS407S_999_2.JPG?sw=1000&sh=1200" alt="Sapphire Dyed Lawn 2 Piece Suit - Stitched Collection" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>Sapphire</span></div>'">
+                            <span class="product-badge new">New</span>
+                            <div class="product-actions">
+                                <button class="btn-wishlist" aria-label="Add to wishlist" onclick="toggleWishlist(this)"><i class="far fa-heart"></i></button>
+                                <button aria-label="Quick view"><i class="fas fa-eye"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Sapphire</div>
+                            <div class="product-name">Dyed Lawn 2 Piece Suit</div>
+                            <div class="product-price">PKR 3,490</div>
+                            <a href="collection.html" class="btn btn-add-cart">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="product-card">
+                        <div class="product-img-wrap">
+                            <img src="https://cdn.shopify.com/s/files/1/0620/8788/9062/files/DWEF26122OffWhiteFront_A.jpg?v=1776340765" alt="Maria B M.Prints Lawn 3 Piece Suit - Unstitched Collection" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>Maria B</span></div>'">
+                            <span class="product-badge new">New</span>
+                            <div class="product-actions">
+                                <button class="btn-wishlist" aria-label="Add to wishlist" onclick="toggleWishlist(this)"><i class="far fa-heart"></i></button>
+                                <button aria-label="Quick view"><i class="fas fa-eye"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Maria B</div>
+                            <div class="product-name">M.Prints Embroidered Lawn 3PC</div>
+                            <div class="product-price">PKR 7,490</div>
+                            <a href="collection.html" class="btn btn-add-cart">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="product-card">
+                        <div class="product-img-wrap">
+                            <img src="https://pk.khaadi.com/dw/image/v2/BJTG_PRD/on/demandware.static/-/Sites-khaadi-master-catalog/default/dw7a37d7cf/images/hi-res/kw32b_multi_1.jpg?sw=400&sh=600" alt="Khaadi Printed Lawn 3 Piece Suit - Stitched Collection" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>Khaadi</span></div>'">
+                            <span class="product-badge new">New</span>
+                            <div class="product-actions">
+                                <button class="btn-wishlist" aria-label="Add to wishlist" onclick="toggleWishlist(this)"><i class="far fa-heart"></i></button>
+                                <button aria-label="Quick view"><i class="fas fa-eye"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Khaadi</div>
+                            <div class="product-name">Printed Lawn 3 Piece Suit</div>
+                            <div class="product-price">PKR 5,500</div>
+                            <a href="collection.html" class="btn btn-add-cart">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="product-card">
+                        <div class="product-img-wrap">
+                            <img src="https://cdn.shopify.com/s/files/1/0706/3253/8159/files/scf-43013_1_-_copy.jpg?v=1758371133" alt="Gul Ahmed Embroidered Lawn Unstitched 3 Piece Suit" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>Gul Ahmed</span></div>'">
+                            <span class="product-badge">Unstitched</span>
+                            <div class="product-actions">
+                                <button class="btn-wishlist" aria-label="Add to wishlist" onclick="toggleWishlist(this)"><i class="far fa-heart"></i></button>
+                                <button aria-label="Quick view"><i class="fas fa-eye"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Gul Ahmed</div>
+                            <div class="product-name">Embroidered Lawn 3PC Unstitched</div>
+                            <div class="product-price">PKR 4,690</div>
+                            <a href="collection.html" class="btn btn-add-cart">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="product-card">
+                        <div class="product-img-wrap">
+                            <img src="https://cdn.shopify.com/s/files/1/0740/1753/8280/files/R-48_2.jpg?v=1776425841" alt="Sana Safinaz Embroidered Lawn Collection" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>Sana Safinaz</span></div>'">
+                            <span class="product-badge new">New</span>
+                            <div class="product-actions">
+                                <button class="btn-wishlist" aria-label="Add to wishlist" onclick="toggleWishlist(this)"><i class="far fa-heart"></i></button>
+                                <button aria-label="Quick view"><i class="fas fa-eye"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Sana Safinaz</div>
+                            <div class="product-name">Embroidered Lawn 3PC Suit</div>
+                            <div class="product-price">PKR 6,990</div>
+                            <a href="collection.html" class="btn btn-add-cart">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="product-card">
+                        <div class="product-img-wrap">
+                            <img src="https://www.junaidjamshed.com/media/catalog/product/j/j/jjlt-26-8104.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=240&canvas=240:300" alt="Junaid Jamshed Printed Lawn 3 Piece Suit" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>J.</span></div>'">
+                            <span class="product-badge">Stitched</span>
+                            <div class="product-actions">
+                                <button class="btn-wishlist" aria-label="Add to wishlist" onclick="toggleWishlist(this)"><i class="far fa-heart"></i></button>
+                                <button aria-label="Quick view"><i class="fas fa-eye"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Junaid Jamshed</div>
+                            <div class="product-name">Printed Lawn 3 Piece Suit</div>
+                            <div class="product-price">PKR 5,290</div>
+                            <a href="collection.html" class="btn btn-add-cart">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" id="testimonials">
+        <div class="container">
+            <div class="section-title animate-on-scroll">
+                <h2>What Our Clients Say</h2>
+                <p>Real experiences from our valued customers</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Madam's Boutique has completely transformed my shopping experience. The quality of brands they carry and the customer service is absolutely outstanding. I found the perfect Eid outfit here!"</p>
+                        <div class="client-name">Ayesha Khan</div>
+                        <div class="client-title">Loyal Customer, Karachi</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"I love how they bring all the top Pakistani brands under one roof. The fabric quality is always genuine, and the delivery is super fast. My go-to boutique for every occasion!"</p>
+                        <div class="client-name">Fatima Ali</div>
+                        <div class="client-title">Fashion Enthusiast, Lahore</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p>"The comparison feature is so helpful! I was able to compare Maria B and Sana Safinaz side by side before making my decision. Truly a premium shopping experience online."</p>
+                        <div class="client-name">Sana Malik</div>
+                        <div class="client-title">Regular Shopper, Islamabad</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter-section" id="newsletter">
+        <div class="container text-center position-relative">
+            <h3>Stay in Style</h3>
+            <p>Subscribe to get updates on new arrivals, exclusive deals & styling tips</p>
+            <div class="newsletter-form">
+                <input type="email" placeholder="Enter your email address" id="newsletterEmail" aria-label="Email for newsletter">
+                <button type="button" onclick="subscribeNewsletter()">Subscribe</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-boutique" id="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 60" height="42" class="mb-3">
+                        <defs>
+                            <linearGradient id="roseGoldFooter" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#C9A96E"/>
+                                <stop offset="100%" style="stop-color:#F2D4C2"/>
+                            </linearGradient>
+                        </defs>
+                        <text x="28" y="35" font-family="'Playfair Display', Georgia, serif" font-size="28" font-weight="700" fill="#FFFFFF" letter-spacing="1">
+                            <tspan fill="url(#roseGoldFooter)">M</tspan>adam's
+                        </text>
+                        <text x="190" y="35" font-family="'Playfair Display', Georgia, serif" font-size="28" font-weight="700" fill="#FFFFFF" letter-spacing="1">Boutique</text>
+                        <text x="100" y="52" font-family="'Lato', Arial, sans-serif" font-size="10.5" fill="#C9A96E" letter-spacing="3">Where Style Meets Elegance</text>
+                    </svg>
+                    <p>Your premier destination for authentic Pakistani fashion. We bring together the finest brands to offer you an unparalleled shopping experience.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="collection.html">Collection</a></li>
+                        <li><a href="brands.html">Brands</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="compare.html">Compare</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Our Brands</h5>
+                    <ul class="footer-links">
+                        <li><a href="https://pk.sapphireonline.pk" target="_blank" rel="noopener noreferrer">Sapphire</a></li>
+                        <li><a href="https://www.mariab.pk" target="_blank" rel="noopener noreferrer">Maria B</a></li>
+                        <li><a href="https://pk.khaadi.com" target="_blank" rel="noopener noreferrer">Khaadi</a></li>
+                        <li><a href="https://www.gulahmedshop.com" target="_blank" rel="noopener noreferrer">Gul Ahmed</a></li>
+                        <li><a href="https://sanasafinaz.com" target="_blank" rel="noopener noreferrer">Sana Safinaz</a></li>
+                        <li><a href="https://www.junaidjamshed.com" target="_blank" rel="noopener noreferrer">Junaid Jamshed</a></li>
+                        <li><a href="https://saya.pk" target="_blank" rel="noopener noreferrer">Saya</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Customer Care</h5>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p>&copy; 2024 Madam's Boutique. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="payment-icons">
+                            <div class="payment-icon"><i class="fab fa-cc-visa me-1"></i> Visa</div>
+                            <div class="payment-icon"><i class="fab fa-cc-mastercard me-1"></i> Mastercard</div>
+                            <div class="payment-icon">JazzCash</div>
+                            <div class="payment-icon">EasyPaisa</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    (function() {
+        const navbar = document.getElementById('mainNavbar');
+        const backToTop = document.getElementById('backToTop');
+        const searchToggle = document.getElementById('searchToggle');
+        const searchOverlay = document.getElementById('searchOverlay');
+        const closeSearch = document.getElementById('closeSearch');
+        const searchInput = document.getElementById('searchInput');
+
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            if (window.scrollY > 400) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        backToTop.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        searchToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            searchOverlay.classList.add('active');
+            setTimeout(function() { searchInput.focus(); }, 300);
+        });
+
+        closeSearch.addEventListener('click', function() {
+            searchOverlay.classList.remove('active');
+        });
+
+        searchOverlay.addEventListener('click', function(e) {
+            if (e.target === searchOverlay) {
+                searchOverlay.classList.remove('active');
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                searchOverlay.classList.remove('active');
+            }
+        });
+
+        var animElements = document.querySelectorAll('.animate-on-scroll');
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        animElements.forEach(function(el) {
+            observer.observe(el);
+        });
+
+        var wishlistCount = 0;
+        var cartCount = 0;
+
+        window.toggleWishlist = function(btn) {
+            var icon = btn.querySelector('i');
+            if (icon.classList.contains('far')) {
+                icon.classList.remove('far');
+                icon.classList.add('fas');
+                btn.classList.add('wishlisted');
+                wishlistCount++;
+            } else {
+                icon.classList.remove('fas');
+                icon.classList.add('far');
+                btn.classList.remove('wishlisted');
+                wishlistCount--;
+            }
+            document.getElementById('wishlistCount').textContent = wishlistCount;
+        };
+
+        window.addToCart = function() {
+            cartCount++;
+            document.getElementById('cartCount').textContent = cartCount;
+            var cartBadge = document.getElementById('cartCount');
+            cartBadge.style.transform = 'scale(1.4)';
+            setTimeout(function() {
+                cartBadge.style.transform = 'scale(1)';
+            }, 200);
+        };
+
+        window.subscribeNewsletter = function() {
+            var email = document.getElementById('newsletterEmail').value;
+            if (email && email.includes('@')) {
+                alert('Thank you for subscribing! You\'ll receive our latest updates at ' + email);
+                document.getElementById('newsletterEmail').value = '';
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        };
+    })();
+    </script>
+
+    <script src="app.js"></script>
+</body>
+</html>
