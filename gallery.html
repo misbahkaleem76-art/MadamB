@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse the Madam's Boutique gallery — a visual showcase of stitched, unstitched, accessories and fragrances from Pakistan's top fashion brands.">
+    <title>Gallery — Madam's Boutique</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <style>
+        .masonry-grid{column-count:3;column-gap:24px;}
+        .masonry-grid .gallery-item{break-inside:avoid;margin-bottom:24px;}
+        @media(max-width:992px){.masonry-grid{column-count:2;}}
+        @media(max-width:576px){.masonry-grid{column-count:1;}}
+        .gallery-item img{height:auto;min-height:200px;border-radius:var(--radius);}
+        .hit-badge{position:absolute;top:12px;right:12px;background:var(--accent);color:var(--white);padding:4px 14px;border-radius:50px;font-size:0.7rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;z-index:2;}
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-boutique fixed-top" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 60" height="48"><defs><linearGradient id="roseGold" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#C9A96E"/><stop offset="100%" style="stop-color:#F2D4C2"/></linearGradient></defs><text x="28" y="35" font-family="'Playfair Display', Georgia, serif" font-size="28" font-weight="700" fill="#6B2737" letter-spacing="1">Madam's</text><text x="190" y="35" font-family="'Playfair Display', Georgia, serif" font-size="28" font-weight="700" fill="#6B2737" letter-spacing="1">Boutique</text><path d="M33 8 L38 2 L40 6 L42 2 L47 8" stroke="#C9A96E" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="40" cy="1" r="1" fill="#C9A96E"/><path d="M22 14 Q20 10 24 8 Q28 6 30 10" stroke="#C9A96E" stroke-width="1" fill="none" opacity="0.6"/><path d="M48 14 Q50 10 46 8 Q42 6 40 10" stroke="#C9A96E" stroke-width="1" fill="none" opacity="0.6"/><text x="100" y="52" font-family="'Lato', Arial, sans-serif" font-size="10.5" fill="#C9A96E" letter-spacing="3">Where Style Meets Elegance</text></svg>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"><i class="fas fa-bars" style="color:var(--primary);"></i></button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="brands.html">Brands</a></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="collection.html" role="button" data-bs-toggle="dropdown">Collection</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="collection.html?category=stitched">Stitched</a></li><li><a class="dropdown-item" href="collection.html?category=unstitched">Unstitched</a></li><li><a class="dropdown-item" href="collection.html?category=accessories">Accessories</a></li><li><a class="dropdown-item" href="collection.html?category=fragrances">Fragrances</a></li></ul></li>
+                    <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="compare.html">Compare</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <ul class="navbar-nav navbar-icons">
+                    <li class="nav-item"><a class="nav-link" href="#" id="searchToggle"><i class="fas fa-search"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-heart"></i><span class="badge">0</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-shopping-bag"></i><span class="badge">0</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="search-overlay" id="searchOverlay"><button class="close-search" id="closeSearch"><i class="fas fa-times"></i></button><div class="search-box"><input type="text" placeholder="Search for products, brands..." id="searchInput"></div></div>
+
+    <section class="page-hero">
+        <h1>Gallery</h1>
+        <p>A visual showcase of style, elegance and craftsmanship</p>
+        <div class="breadcrumb-custom"><a href="index.html">Home</a><span>/</span><span style="color:var(--white);">Gallery</span></div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="filter-tabs mb-5" id="galleryTabs">
+                <button class="filter-tab active" data-filter="all">All</button>
+                <button class="filter-tab" data-filter="stitched">Stitched</button>
+                <button class="filter-tab" data-filter="unstitched">Unstitched</button>
+                <button class="filter-tab" data-filter="accessory">Accessories</button>
+                <button class="filter-tab" data-filter="fragrance">Fragrances</button>
+                <button class="filter-tab" data-filter="sapphire">Sapphire</button>
+                <button class="filter-tab" data-filter="mariab">Maria B</button>
+                <button class="filter-tab" data-filter="khaadi">Khaadi</button>
+                <button class="filter-tab" data-filter="gulahmed">Gul Ahmed</button>
+                <button class="filter-tab" data-filter="sanasafinaz">Sana Safinaz</button>
+                <button class="filter-tab" data-filter="jj">J.</button>
+                <button class="filter-tab" data-filter="saya">Saya</button>
+            </div>
+
+            <div class="section-title animate-on-scroll">
+                <h2>Hit Collection</h2>
+                <p>Our most loved pieces this season</p>
+            </div>
+
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="gallery-item hit-collection" data-category="unstitched" data-brand="mariab" onclick="openLightbox(this)">
+                        <span class="hit-badge"><i class="fas fa-fire me-1"></i>Hit</span>
+                        <img src="https://cdn.shopify.com/s/files/1/0620/8788/9062/files/DWEF2625Front_A.jpg?v=1776244195" alt="Maria B Soiree Chiffon Ice Blue - Hit Collection">
+                        <div class="gallery-overlay">
+                            <h5>Soiree Chiffon Ice Blue</h5>
+                            <span>Maria B</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="gallery-item hit-collection" data-category="stitched" data-brand="khaadi" onclick="openLightbox(this)">
+                        <span class="hit-badge"><i class="fas fa-fire me-1"></i>Hit</span>
+                        <img src="https://pk.khaadi.com/dw/image/v2/BJTG_PRD/on/demandware.static/-/Sites-khaadi-master-catalog/default/dw7a37d7cf/images/hi-res/kw32b_multi_1.jpg?sw=400&sh=600" alt="Khaadi Printed Lawn 3 Piece - Hit Collection">
+                        <div class="gallery-overlay">
+                            <h5>Printed Lawn 3 Piece</h5>
+                            <span>Khaadi</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="gallery-item hit-collection" data-category="unstitched" data-brand="sanasafinaz" onclick="openLightbox(this)">
+                        <span class="hit-badge"><i class="fas fa-fire me-1"></i>Hit</span>
+                        <img src="https://cdn.shopify.com/s/files/1/0740/1753/8280/files/R-48_2.jpg?v=1776425841" alt="Sana Safinaz Embroidered Lawn - Hit Collection">
+                        <div class="gallery-overlay">
+                            <h5>Embroidered Lawn 3PC</h5>
+                            <span>Sana Safinaz</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-title animate-on-scroll">
+                <h2>Full Gallery</h2>
+                <p>Browse our complete visual collection</p>
+            </div>
+
+            <div class="masonry-grid" id="galleryGrid">
+                <div class="gallery-item" data-category="stitched" data-brand="sapphire" onclick="openLightbox(this)">
+                    <img src="https://pk.sapphireonline.pk/dw/image/v2/BKSB_PRD/on/demandware.static/-/Sites-sapphire-master-catalog/default/dw2a0c2297/images/April26/10thApril26/PR6CASTV605S_999_2.JPG?sw=1000&sh=1200" alt="Sapphire Printed Lawn 2 Piece Suit Gallery">
+                    <div class="gallery-overlay"><h5>Printed Lawn 2 Piece</h5><span>Sapphire</span></div>
+                </div>
+                <div class="gallery-item" data-category="unstitched" data-brand="mariab" onclick="openLightbox(this)">
+                    <img src="https://cdn.shopify.com/s/files/1/0620/8788/9062/files/DWEF26122OffWhiteFront_A.jpg?v=1776340765" alt="Maria B M.Prints Embroidered Lawn Gallery">
+                    <div class="gallery-overlay"><h5>M.Prints Embroidered Lawn</h5><span>Maria B</span></div>
+                </div>
+                <div class="gallery-item" data-category="stitched" data-brand="khaadi" onclick="openLightbox(this)">
+                    <img src="https://pk.khaadi.com/dw/image/v2/BJTG_PRD/on/demandware.static/-/Sites-khaadi-master-catalog/default/dw97ffcafe/images/hi-res/kw38a_multi_1.jpg?sw=400&sh=600" alt="Khaadi Embroidered Lawn 2 Piece Blue Gallery">
+                    <div class="gallery-overlay"><h5>Embroidered Lawn 2 Piece</h5><span>Khaadi</span></div>
+                </div>
+                <div class="gallery-item" data-category="unstitched" data-brand="gulahmed" onclick="openLightbox(this)">
+                    <img src="https://cdn.shopify.com/s/files/1/0706/3253/8159/files/scf-43013_1_-_copy.jpg?v=1758371133" alt="Gul Ahmed Printed Lawn 3PC Gallery">
+                    <div class="gallery-overlay"><h5>Printed Lawn 3PC</h5><span>Gul Ahmed</span></div>
+                </div>
+                <div class="gallery-item" data-category="stitched" data-brand="sapphire" onclick="openLightbox(this)">
+                    <img src="https://pk.sapphireonline.pk/dw/image/v2/BKSB_PRD/on/demandware.static/-/Sites-sapphire-master-catalog/default/dwf711a675/images/April26/9thApril26/PR6CAHMV629S_999_2.JPG?sw=1000&sh=1200" alt="Sapphire Embroidered Cotton 3 Piece Gallery">
+                    <div class="gallery-overlay"><h5>Embroidered Cotton 3 Piece</h5><span>Sapphire</span></div>
+                </div>
+                <div class="gallery-item" data-category="unstitched" data-brand="sanasafinaz" onclick="openLightbox(this)">
+                    <img src="https://cdn.shopify.com/s/files/1/0740/1753/8280/files/SS23GEXE413_1.jpg?v=1776423468" alt="Sana Safinaz Digital Printed Lawn Gallery">
+                    <div class="gallery-overlay"><h5>Digital Printed Lawn 3PC</h5><span>Sana Safinaz</span></div>
+                </div>
+                <div class="gallery-item" data-category="stitched" data-brand="jj" onclick="openLightbox(this)">
+                    <img src="https://www.junaidjamshed.com/media/catalog/product/j/j/jjlt-26-8104.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=240&canvas=240:300" alt="J. Printed Lawn 3 Piece Gallery">
+                    <div class="gallery-overlay"><h5>Printed Lawn 3 Piece</h5><span>Junaid Jamshed</span></div>
+                </div>
+                <div class="gallery-item" data-category="unstitched" data-brand="mariab" onclick="openLightbox(this)">
+                    <img src="https://cdn.shopify.com/s/files/1/0620/8788/9062/files/DWEA26102OffWhiteFront_A.jpg?v=1776247865" alt="Maria B Eid Lawn Sage Green Gallery">
+                    <div class="gallery-overlay"><h5>Eid Lawn Sage Green</h5><span>Maria B</span></div>
+                </div>
+                <div class="gallery-item" data-category="unstitched" data-brand="saya" onclick="openLightbox(this)">
+                    <img src="https://cdn.shopify.com/s/files/1/0184/5074/3360/files/u01-26010-p04a-1thumbnail.jpg?v=1776426703" alt="Saya Embroidered Lawn 3PC Gallery">
+                    <div class="gallery-overlay"><h5>Embroidered Lawn 3PC</h5><span>Saya</span></div>
+                </div>
+                <div class="gallery-item" data-category="stitched" data-brand="khaadi" onclick="openLightbox(this)">
+                    <img src="https://pk.khaadi.com/dw/image/v2/BJTG_PRD/on/demandware.static/-/Sites-khaadi-master-catalog/default/dw73c99f2c/images/hi-res/25-09-10e3-02ta_multi_1.jpg?sw=400&sh=600" alt="Khaadi Printed Cambric 3 Piece Maroon Gallery">
+                    <div class="gallery-overlay"><h5>Printed Cambric 3 Piece</h5><span>Khaadi</span></div>
+                </div>
+                <div class="gallery-item" data-category="unstitched" data-brand="gulahmed" onclick="openLightbox(this)">
+                    <img src="https://cdn.shopify.com/s/files/1/0706/3253/8159/files/scf-43006_1_-_copy.jpg?v=1758371130" alt="Gul Ahmed Embroidered Lawn Gallery">
+                    <div class="gallery-overlay"><h5>Embroidered Lawn Suite</h5><span>Gul Ahmed</span></div>
+                </div>
+                <div class="gallery-item" data-category="stitched" data-brand="mariab" onclick="openLightbox(this)">
+                    <img src="https://cdn.shopify.com/s/files/1/0620/8788/9062/files/DWEA2634FeroziFront_A.jpg?v=1776244469" alt="Maria B Premium Pret Dusty Pink Gallery">
+                    <div class="gallery-overlay"><h5>Premium Pret Dusty Pink</h5><span>Maria B</span></div>
+                </div>
+                <div class="gallery-item" data-category="accessory" data-brand="sapphire" onclick="openLightbox(this)">
+                    <img src="https://cdn.shopify.com/s/files/1/0620/8788/9062/files/MBG-W25-19-Brown_Front_A.jpg?v=1763736036" alt="Sapphire Leather Tote Bag Gallery">
+                    <div class="gallery-overlay"><h5>Leather Tote Bag</h5><span>Sapphire</span></div>
+                </div>
+                <div class="gallery-item" data-category="fragrance" data-brand="jj" onclick="openLightbox(this)">
+                    <img src="https://cdn.shopify.com/s/files/1/0620/8788/9062/files/Sand_A.jpg?v=1739450714" alt="J. Pour Femme EDP Gallery">
+                    <div class="gallery-overlay"><h5>J. Pour Femme EDP</h5><span>Junaid Jamshed</span></div>
+                </div>
+                <div class="gallery-item" data-category="stitched" data-brand="sanasafinaz" onclick="openLightbox(this)">
+                    <img src="https://cdn.shopify.com/s/files/1/0740/1753/8280/files/SS23GBSP177_1.jpg?v=1776422530" alt="Sana Safinaz Stitched Printed 2PC Gallery">
+                    <div class="gallery-overlay"><h5>Stitched Printed 2PC</h5><span>Sana Safinaz</span></div>
+                </div>
+                <div class="gallery-item" data-category="unstitched" data-brand="saya" onclick="openLightbox(this)">
+                    <img src="https://cdn.shopify.com/s/files/1/0184/5074/3360/files/sp-12327-1thumbnail.jpg?v=1776429547" alt="Saya Printed Lawn 2PC Gallery">
+                    <div class="gallery-overlay"><h5>Printed Lawn 2PC</h5><span>Saya</span></div>
+                </div>
+                <div class="gallery-item" data-category="stitched" data-brand="jj" onclick="openLightbox(this)">
+                    <img src="https://www.junaidjamshed.com/media/catalog/product/j/j/jjlt-26-8103.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=240&canvas=240:300" alt="J. Embroidered Lawn 3PC Gallery">
+                    <div class="gallery-overlay"><h5>Embroidered Lawn 3PC</h5><span>Junaid Jamshed</span></div>
+                </div>
+                <div class="gallery-item" data-category="fragrance" data-brand="khaadi" onclick="openLightbox(this)">
+                    <img src="https://cdn.shopify.com/s/files/1/0706/3253/8159/files/DSC04176.jpg?v=1773679441" alt="Khaadi Eau De Parfum Mystic Oud Gallery">
+                    <div class="gallery-overlay"><h5>Mystic Oud EDP</h5><span>Khaadi</span></div>
+                </div>
+                <div class="gallery-item" data-category="unstitched" data-brand="sapphire" onclick="openLightbox(this)">
+                    <img src="https://pk.sapphireonline.pk/dw/image/v2/BKSB_PRD/on/demandware.static/-/Sites-sapphire-master-catalog/default/dw21098552/images/April26/9thApril26/PES6SCHMV704_999_2.JPG?sw=1000&sh=1200" alt="Sapphire Digital Print Lawn Unstitched Gallery">
+                    <div class="gallery-overlay"><h5>Digital Print Lawn 2PC</h5><span>Sapphire</span></div>
+                </div>
+                <div class="gallery-item" data-category="accessory" data-brand="gulahmed" onclick="openLightbox(this)">
+                    <img src="https://cdn.shopify.com/s/files/1/0620/8788/9062/files/MBG-W25-16CamelFront_A_c115b6d2-bdd4-4c6d-a617-7162b1a5d2d7.jpg?v=1762953996" alt="Gul Ahmed Leather Sandals Gallery">
+                    <div class="gallery-overlay"><h5>Leather Sandals</h5><span>Gul Ahmed</span></div>
+                </div>
+                <div class="gallery-item" data-category="stitched" data-brand="saya" onclick="openLightbox(this)">
+                    <img src="https://cdn.shopify.com/s/files/1/0184/5074/3360/files/U01-25396-31A-1Thumbnail_fadd38e0-2521-40bb-ab1f-20d2d877b949.jpg?v=1776424130" alt="Saya Stitched Embroidered 2PC Gallery">
+                    <div class="gallery-overlay"><h5>Stitched Embroidered 2PC</h5><span>Saya</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="lightbox-overlay" id="lightbox">
+        <button class="close-lightbox" onclick="closeLightbox()"><i class="fas fa-times"></i></button>
+        <img src="" alt="Lightbox Image" id="lightboxImg">
+    </div>
+
+    <footer class="footer-boutique">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 60" height="42" class="mb-3"><defs><linearGradient id="roseGoldFooter" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#C9A96E"/><stop offset="100%" style="stop-color:#F2D4C2"/></linearGradient></defs><text x="28" y="35" font-family="'Playfair Display', Georgia, serif" font-size="28" font-weight="700" fill="#FFFFFF" letter-spacing="1"><tspan fill="url(#roseGoldFooter)">M</tspan>adam's</text><text x="190" y="35" font-family="'Playfair Display', Georgia, serif" font-size="28" font-weight="700" fill="#FFFFFF" letter-spacing="1">Boutique</text><text x="100" y="52" font-family="'Lato', Arial, sans-serif" font-size="10.5" fill="#C9A96E" letter-spacing="3">Where Style Meets Elegance</text></svg>
+                    <p>Your premier destination for authentic Pakistani fashion.</p>
+                    <div class="footer-social"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-pinterest-p"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a></div>
+                </div>
+                <div class="col-lg-2 col-md-6"><h5>Quick Links</h5><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="collection.html">Collection</a></li><li><a href="brands.html">Brands</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="compare.html">Compare</a></li></ul></div>
+                <div class="col-lg-3 col-md-6"><h5>Our Brands</h5><ul class="footer-links"><li><a href="https://pk.sapphireonline.pk" target="_blank" rel="noopener noreferrer">Sapphire</a></li><li><a href="https://www.mariab.pk" target="_blank" rel="noopener noreferrer">Maria B</a></li><li><a href="https://pk.khaadi.com" target="_blank" rel="noopener noreferrer">Khaadi</a></li><li><a href="https://www.gulahmedshop.com" target="_blank" rel="noopener noreferrer">Gul Ahmed</a></li><li><a href="https://sanasafinaz.com" target="_blank" rel="noopener noreferrer">Sana Safinaz</a></li><li><a href="https://www.junaidjamshed.com" target="_blank" rel="noopener noreferrer">Junaid Jamshed</a></li><li><a href="https://saya.pk" target="_blank" rel="noopener noreferrer">Saya</a></li></ul></div>
+                <div class="col-lg-3 col-md-6"><h5>Customer Care</h5><ul class="footer-links"><li><a href="contact.html">Contact Us</a></li><li><a href="about.html">About Us</a></li><li><a href="#">Shipping Policy</a></li><li><a href="#">Return Policy</a></li><li><a href="#">Privacy Policy</a></li></ul></div>
+            </div>
+            <div class="footer-bottom"><div class="row align-items-center"><div class="col-md-6"><p>&copy; 2024 Madam's Boutique. All Rights Reserved.</p></div><div class="col-md-6"><div class="payment-icons"><div class="payment-icon"><i class="fab fa-cc-visa me-1"></i> Visa</div><div class="payment-icon"><i class="fab fa-cc-mastercard me-1"></i> Mastercard</div><div class="payment-icon">JazzCash</div><div class="payment-icon">EasyPaisa</div></div></div></div></div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></button>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    (function(){
+        var navbar=document.getElementById('mainNavbar'),backToTop=document.getElementById('backToTop');
+        window.addEventListener('scroll',function(){navbar.classList.toggle('scrolled',window.scrollY>50);backToTop.classList.toggle('show',window.scrollY>400);});
+        backToTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+        var searchToggle=document.getElementById('searchToggle'),searchOverlay=document.getElementById('searchOverlay'),closeSearch=document.getElementById('closeSearch');
+        searchToggle.addEventListener('click',function(e){e.preventDefault();searchOverlay.classList.add('active');document.getElementById('searchInput').focus();});
+        closeSearch.addEventListener('click',function(){searchOverlay.classList.remove('active');});
+        searchOverlay.addEventListener('click',function(e){if(e.target===searchOverlay)searchOverlay.classList.remove('active');});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape'){searchOverlay.classList.remove('active');closeLightbox();}});
+
+        var tabs=document.querySelectorAll('.filter-tab');
+        var items=document.querySelectorAll('.gallery-item');
+        tabs.forEach(function(tab){
+            tab.addEventListener('click',function(){
+                tabs.forEach(function(t){t.classList.remove('active');});
+                tab.classList.add('active');
+                var filter=tab.getAttribute('data-filter');
+                items.forEach(function(item){
+                    if(filter==='all'){item.style.display='block';}
+                    else if(item.getAttribute('data-category')===filter||item.getAttribute('data-brand')===filter){item.style.display='block';}
+                    else{item.style.display='none';}
+                });
+            });
+        });
+
+        document.querySelectorAll('.animate-on-scroll').forEach(function(el){
+            new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting)entry.target.classList.add('visible');});},{threshold:0.1}).observe(el);
+        });
+
+        document.querySelectorAll('.gallery-item img').forEach(function(img){
+            img.addEventListener('error',function(){
+                this.style.display='none';
+                var ph=document.createElement('div');
+                ph.className='img-placeholder';
+                ph.style.height='250px';
+                ph.style.borderRadius='var(--radius)';
+                ph.innerHTML='<i class="fas fa-image"></i><span>Image</span>';
+                this.parentElement.insertBefore(ph,this);
+            });
+        });
+    })();
+
+    function openLightbox(el){
+        var img=el.querySelector('img');
+        if(img&&img.src){
+            document.getElementById('lightboxImg').src=img.src;
+            document.getElementById('lightboxImg').alt=img.alt;
+            document.getElementById('lightbox').classList.add('active');
+        }
+    }
+    function closeLightbox(){document.getElementById('lightbox').classList.remove('active');}
+    document.getElementById('lightbox').addEventListener('click',function(e){if(e.target===this)closeLightbox();});
+    </script>
+    <script src="app.js"></script>
+</body>
+</html>

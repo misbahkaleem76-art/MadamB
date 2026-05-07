@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shop the full collection of stitched, unstitched, accessories and fragrances at Madam's Boutique. Filter by brand, category, size and price.">
+    <title>Collection — Madam's Boutique</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-boutique fixed-top" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 60" height="48"><defs><linearGradient id="roseGold" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#C9A96E"/><stop offset="100%" style="stop-color:#F2D4C2"/></linearGradient></defs><text x="28" y="35" font-family="'Playfair Display', Georgia, serif" font-size="28" font-weight="700" fill="#6B2737" letter-spacing="1">Madam's</text><text x="190" y="35" font-family="'Playfair Display', Georgia, serif" font-size="28" font-weight="700" fill="#6B2737" letter-spacing="1">Boutique</text><path d="M33 8 L38 2 L40 6 L42 2 L47 8" stroke="#C9A96E" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="40" cy="1" r="1" fill="#C9A96E"/><path d="M22 14 Q20 10 24 8 Q28 6 30 10" stroke="#C9A96E" stroke-width="1" fill="none" opacity="0.6"/><path d="M48 14 Q50 10 46 8 Q42 6 40 10" stroke="#C9A96E" stroke-width="1" fill="none" opacity="0.6"/><text x="100" y="52" font-family="'Lato', Arial, sans-serif" font-size="10.5" fill="#C9A96E" letter-spacing="3">Where Style Meets Elegance</text></svg>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"><i class="fas fa-bars" style="color: var(--primary);"></i></button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="brands.html">Brands</a></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle active" href="collection.html" role="button" data-bs-toggle="dropdown">Collection</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="collection.html?category=stitched">Stitched</a></li><li><a class="dropdown-item" href="collection.html?category=unstitched">Unstitched</a></li><li><a class="dropdown-item" href="collection.html?category=accessories">Accessories</a></li><li><a class="dropdown-item" href="collection.html?category=fragrances">Fragrances</a></li></ul></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="compare.html">Compare</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <ul class="navbar-nav navbar-icons">
+                    <li class="nav-item"><a class="nav-link" href="#" id="searchToggle"><i class="fas fa-search"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-heart"></i><span class="badge">0</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-shopping-bag"></i><span class="badge" id="cartBadge">0</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="search-overlay" id="searchOverlay"><button class="close-search" id="closeSearch"><i class="fas fa-times"></i></button><div class="search-box"><input type="text" placeholder="Search for products, brands..." id="searchInput"></div></div>
+
+    <section class="page-hero">
+        <h1>Our Collection</h1>
+        <p>Discover the finest fashion from Pakistan's top brands</p>
+        <div class="breadcrumb-custom"><a href="index.html">Home</a><span>/</span><span style="color: var(--white);">Collection</span></div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container-fluid px-4">
+            <div class="row g-4">
+                <div class="col-lg-3">
+                    <div class="filter-sidebar">
+                        <h5 style="font-family:'Playfair Display',serif; color:var(--primary); margin-bottom:25px;">
+                            <i class="fas fa-sliders-h me-2"></i>Filters
+                        </h5>
+
+                        <div class="filter-group">
+                            <h6>Category</h6>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" value="stitched" id="catStitched" checked onchange="filterProducts()"><label class="form-check-label" for="catStitched">Stitched</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" value="unstitched" id="catUnstitched" checked onchange="filterProducts()"><label class="form-check-label" for="catUnstitched">Unstitched</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" value="accessory" id="catAccessory" checked onchange="filterProducts()"><label class="form-check-label" for="catAccessory">Accessories</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" value="fragrance" id="catFragrance" checked onchange="filterProducts()"><label class="form-check-label" for="catFragrance">Fragrances</label></div>
+                        </div>
+
+                        <div class="filter-group">
+                            <h6>Brand</h6>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" value="sapphire" id="brSapphire" checked onchange="filterProducts()"><label class="form-check-label" for="brSapphire">Sapphire</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" value="mariab" id="brMariab" checked onchange="filterProducts()"><label class="form-check-label" for="brMariab">Maria B</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" value="khaadi" id="brKhaadi" checked onchange="filterProducts()"><label class="form-check-label" for="brKhaadi">Khaadi</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" value="gulahmed" id="brGulahmed" checked onchange="filterProducts()"><label class="form-check-label" for="brGulahmed">Gul Ahmed</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" value="sanasafinaz" id="brSanasafinaz" checked onchange="filterProducts()"><label class="form-check-label" for="brSanasafinaz">Sana Safinaz</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" value="jj" id="brJj" checked onchange="filterProducts()"><label class="form-check-label" for="brJj">Junaid Jamshed</label></div>
+                            <div class="form-check"><input class="form-check-input" type="checkbox" value="saya" id="brSaya" checked onchange="filterProducts()"><label class="form-check-label" for="brSaya">Saya</label></div>
+                        </div>
+
+                        <div class="filter-group">
+                            <h6>Size</h6>
+                            <div class="product-sizes">
+                                <button class="size-pill active" onclick="this.classList.toggle('active')">XS</button>
+                                <button class="size-pill active" onclick="this.classList.toggle('active')">S</button>
+                                <button class="size-pill active" onclick="this.classList.toggle('active')">M</button>
+                                <button class="size-pill active" onclick="this.classList.toggle('active')">L</button>
+                                <button class="size-pill active" onclick="this.classList.toggle('active')">XL</button>
+                                <button class="size-pill active" onclick="this.classList.toggle('active')">XXL</button>
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <h6>Price Range</h6>
+                            <input type="range" class="form-range" min="1000" max="50000" value="50000" id="priceRange" oninput="document.getElementById('priceDisplay').textContent='PKR 1,000 — PKR '+parseInt(this.value).toLocaleString(); filterProducts();">
+                            <div class="price-range-display" id="priceDisplay">PKR 1,000 — PKR 50,000</div>
+                        </div>
+
+                        <div class="filter-group">
+                            <h6>Color</h6>
+                            <div class="color-swatches">
+                                <div class="color-swatch" style="background:#2C2C2C;" title="Black" onclick="this.classList.toggle('active')"></div>
+                                <div class="color-swatch" style="background:#FFFFFF; border:1px solid #ddd;" title="White" onclick="this.classList.toggle('active')"></div>
+                                <div class="color-swatch" style="background:#6B2737;" title="Burgundy" onclick="this.classList.toggle('active')"></div>
+                                <div class="color-swatch" style="background:#1a5276;" title="Navy" onclick="this.classList.toggle('active')"></div>
+                                <div class="color-swatch" style="background:#27ae60;" title="Green" onclick="this.classList.toggle('active')"></div>
+                                <div class="color-swatch" style="background:#e74c3c;" title="Red" onclick="this.classList.toggle('active')"></div>
+                                <div class="color-swatch" style="background:#F2D4C2;" title="Pink" onclick="this.classList.toggle('active')"></div>
+                                <div class="color-swatch" style="background:#f39c12;" title="Yellow" onclick="this.classList.toggle('active')"></div>
+                                <div class="color-swatch" style="background:#3498db;" title="Blue" onclick="this.classList.toggle('active')"></div>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary-custom w-100 mt-2" onclick="resetFilters()">Reset Filters</button>
+                    </div>
+                </div>
+
+                <div class="col-lg-9">
+                    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+                        <p class="mb-0 text-muted" id="resultCount">Showing all products</p>
+                        <select class="form-select" style="width:200px; border-radius:50px; border:2px solid #eee; font-size:0.85rem;" id="sortSelect" onchange="filterProducts()">
+                            <option value="default">Sort By: Default</option>
+                            <option value="low">Price: Low to High</option>
+                            <option value="high">Price: High to Low</option>
+                            <option value="name">Name: A to Z</option>
+                        </select>
+                    </div>
+                    <div class="row g-4" id="productGrid"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-boutique">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 60" height="42" class="mb-3"><defs><linearGradient id="roseGoldFooter" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#C9A96E"/><stop offset="100%" style="stop-color:#F2D4C2"/></linearGradient></defs><text x="28" y="35" font-family="'Playfair Display', Georgia, serif" font-size="28" font-weight="700" fill="#FFFFFF" letter-spacing="1"><tspan fill="url(#roseGoldFooter)">M</tspan>adam's</text><text x="190" y="35" font-family="'Playfair Display', Georgia, serif" font-size="28" font-weight="700" fill="#FFFFFF" letter-spacing="1">Boutique</text><text x="100" y="52" font-family="'Lato', Arial, sans-serif" font-size="10.5" fill="#C9A96E" letter-spacing="3">Where Style Meets Elegance</text></svg>
+                    <p>Your premier destination for authentic Pakistani fashion.</p>
+                    <div class="footer-social"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-pinterest-p"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a></div>
+                </div>
+                <div class="col-lg-2 col-md-6"><h5>Quick Links</h5><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="collection.html">Collection</a></li><li><a href="brands.html">Brands</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="compare.html">Compare</a></li></ul></div>
+                <div class="col-lg-3 col-md-6"><h5>Our Brands</h5><ul class="footer-links"><li><a href="https://pk.sapphireonline.pk" target="_blank" rel="noopener noreferrer">Sapphire</a></li><li><a href="https://www.mariab.pk" target="_blank" rel="noopener noreferrer">Maria B</a></li><li><a href="https://pk.khaadi.com" target="_blank" rel="noopener noreferrer">Khaadi</a></li><li><a href="https://www.gulahmedshop.com" target="_blank" rel="noopener noreferrer">Gul Ahmed</a></li><li><a href="https://sanasafinaz.com" target="_blank" rel="noopener noreferrer">Sana Safinaz</a></li><li><a href="https://www.junaidjamshed.com" target="_blank" rel="noopener noreferrer">Junaid Jamshed</a></li><li><a href="https://saya.pk" target="_blank" rel="noopener noreferrer">Saya</a></li></ul></div>
+                <div class="col-lg-3 col-md-6"><h5>Customer Care</h5><ul class="footer-links"><li><a href="contact.html">Contact Us</a></li><li><a href="about.html">About Us</a></li><li><a href="#">Shipping Policy</a></li><li><a href="#">Return Policy</a></li><li><a href="#">Privacy Policy</a></li></ul></div>
+            </div>
+            <div class="footer-bottom"><div class="row align-items-center"><div class="col-md-6"><p>&copy; 2024 Madam's Boutique. All Rights Reserved.</p></div><div class="col-md-6"><div class="payment-icons"><div class="payment-icon"><i class="fab fa-cc-visa me-1"></i> Visa</div><div class="payment-icon"><i class="fab fa-cc-mastercard me-1"></i> Mastercard</div><div class="payment-icon">JazzCash</div><div class="payment-icon">EasyPaisa</div></div></div></div></div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></button>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    var allProducts = [
+        {name:"Printed Lawn 2 Piece Suit",brand:"sapphire",brandLabel:"Sapphire",category:"stitched",price:3490,img:"https://pk.sapphireonline.pk/dw/image/v2/BKSB_PRD/on/demandware.static/-/Sites-sapphire-master-catalog/default/dw2a0c2297/images/April26/10thApril26/PR6CASTV605S_999_2.JPG?sw=1000&sh=1200",alt:"Sapphire Printed Lawn 2 Piece Suit"},
+        {name:"Embroidered Cotton 3 Piece",brand:"sapphire",brandLabel:"Sapphire",category:"stitched",price:5990,img:"https://pk.sapphireonline.pk/dw/image/v2/BKSB_PRD/on/demandware.static/-/Sites-sapphire-master-catalog/default/dwf711a675/images/April26/9thApril26/PR6CAHMV629S_999_2.JPG?sw=1000&sh=1200",alt:"Sapphire Embroidered Cotton 3 Piece"},
+        {name:"Digital Print Lawn 2PC",brand:"sapphire",brandLabel:"Sapphire",category:"unstitched",price:2850,img:"https://pk.sapphireonline.pk/dw/image/v2/BKSB_PRD/on/demandware.static/-/Sites-sapphire-master-catalog/default/dw21098552/images/April26/9thApril26/PES6SCHMV704_999_2.JPG?sw=1000&sh=1200",alt:"Sapphire Digital Print Lawn 2PC Unstitched"},
+        {name:"Embroidered Lawn 3PC Unstitched",brand:"sapphire",brandLabel:"Sapphire",category:"unstitched",price:5290,img:"https://pk.sapphireonline.pk/dw/image/v2/BKSB_PRD/on/demandware.static/-/Sites-sapphire-master-catalog/default/dwf1037620/images/April26/9thApril26/PRS6SCHMV749_999_2.JPG?sw=1000&sh=1200",alt:"Sapphire Embroidered Lawn 3PC"},
+        {name:"Dyed Jacquard 2 Piece",brand:"sapphire",brandLabel:"Sapphire",category:"stitched",price:4390,img:"https://pk.sapphireonline.pk/dw/image/v2/BKSB_PRD/on/demandware.static/-/Sites-sapphire-master-catalog/default/dw7673ab39/images/April26/9thApril26/PRS2CASTV621_999_2.JPG?sw=1000&sh=1200",alt:"Sapphire Dyed Jacquard 2 Piece"},
+        {name:"Leather Tote Bag - Tan",brand:"sapphire",brandLabel:"Sapphire",category:"accessory",price:6990,img:"https://cdn.shopify.com/s/files/1/0620/8788/9062/files/MBG-W25-19-Brown_Front_A.jpg?v=1763736036",alt:"Sapphire Leather Tote Bag Tan"},
+        {name:"Crossbody Bag - Black",brand:"sapphire",brandLabel:"Sapphire",category:"accessory",price:4990,img:"https://cdn.shopify.com/s/files/1/0620/8788/9062/files/MBG-W25-18-Green_Front_A.jpg?v=1763735971",alt:"Sapphire Crossbody Bag Black"},
+        {name:"M.Prints Embroidered Lawn 3PC",brand:"mariab",brandLabel:"Maria B",category:"unstitched",price:7490,img:"https://cdn.shopify.com/s/files/1/0620/8788/9062/files/DWEF26122OffWhiteFront_A.jpg?v=1776340765",alt:"Maria B M.Prints Embroidered Lawn 3PC"},
+        {name:"Eid Lawn Collection Sage Green",brand:"mariab",brandLabel:"Maria B",category:"unstitched",price:8990,img:"https://cdn.shopify.com/s/files/1/0620/8788/9062/files/DWEA26102OffWhiteFront_A.jpg?v=1776247865",alt:"Maria B Eid Lawn Sage Green"},
+        {name:"Premium Lawn Printed 3PC",brand:"mariab",brandLabel:"Maria B",category:"unstitched",price:5490,img:"https://cdn.shopify.com/s/files/1/0620/8788/9062/files/MSTEF2611Front_A.jpg?v=1776243605",alt:"Maria B Premium Lawn Printed"},
+        {name:"Daily Wear Kurta - Cream",brand:"mariab",brandLabel:"Maria B",category:"stitched",price:4290,img:"https://cdn.shopify.com/s/files/1/0620/8788/9062/files/DWEF2625LightBlueFront_A.jpg?v=1776244087",alt:"Maria B Daily Wear Kurta Cream"},
+        {name:"Soiree Chiffon - Ice Blue",brand:"mariab",brandLabel:"Maria B",category:"unstitched",price:14990,img:"https://cdn.shopify.com/s/files/1/0620/8788/9062/files/DWEF2625Front_A.jpg?v=1776244195",alt:"Maria B Soiree Chiffon Ice Blue"},
+        {name:"Premium Pret Embroidered",brand:"mariab",brandLabel:"Maria B",category:"stitched",price:9990,img:"https://cdn.shopify.com/s/files/1/0620/8788/9062/files/DWEA2634FeroziFront_A.jpg?v=1776244469",alt:"Maria B Premium Pret Dusty Pink"},
+        {name:"Printed Lawn 3 Piece Suit",brand:"khaadi",brandLabel:"Khaadi",category:"stitched",price:5500,img:"https://pk.khaadi.com/dw/image/v2/BJTG_PRD/on/demandware.static/-/Sites-khaadi-master-catalog/default/dw7a37d7cf/images/hi-res/kw32b_multi_1.jpg?sw=400&sh=600",alt:"Khaadi Printed Lawn 3 Piece Green"},
+        {name:"Embroidered Lawn 2 Piece",brand:"khaadi",brandLabel:"Khaadi",category:"stitched",price:4200,img:"https://pk.khaadi.com/dw/image/v2/BJTG_PRD/on/demandware.static/-/Sites-khaadi-master-catalog/default/dw97ffcafe/images/hi-res/kw38a_multi_1.jpg?sw=400&sh=600",alt:"Khaadi Embroidered Lawn 2 Piece Blue"},
+        {name:"Printed Cambric 3 Piece",brand:"khaadi",brandLabel:"Khaadi",category:"stitched",price:5800,img:"https://pk.khaadi.com/dw/image/v2/BJTG_PRD/on/demandware.static/-/Sites-khaadi-master-catalog/default/dw73c99f2c/images/hi-res/25-09-10e3-02ta_multi_1.jpg?sw=400&sh=600",alt:"Khaadi Printed Cambric 3 Piece Maroon"},
+        {name:"Embroidered Lawn 3PC Unstitched",brand:"khaadi",brandLabel:"Khaadi",category:"unstitched",price:4990,img:"https://pk.khaadi.com/dw/image/v2/BJTG_PRD/on/demandware.static/-/Sites-khaadi-master-catalog/default/dwea51b189/images/hi-res/25-10-11e1-07ta_multi_1.jpg?sw=400&sh=600",alt:"Khaadi Embroidered Lawn 3PC Unstitched"},
+        {name:"Signature 3 Piece Suit",brand:"khaadi",brandLabel:"Khaadi",category:"stitched",price:7500,img:"https://pk.khaadi.com/dw/image/v2/BJTG_PRD/on/demandware.static/-/Sites-khaadi-master-catalog/default/dwe2fa6bbe/images/hi-res/25-09-12e2-02ta_multi_1.jpg?sw=400&sh=600",alt:"Khaadi Signature 3 Piece Teal"},
+        {name:"Body Mist - Floral Bliss",brand:"khaadi",brandLabel:"Khaadi",category:"fragrance",price:1690,img:"https://cdn.shopify.com/s/files/1/0706/3253/8159/files/DSC04176.jpg?v=1773679441",alt:"Khaadi Body Mist Floral Bliss",notes:"Floral, Fresh, Citrus",size:"100ml"},
+        {name:"Eau De Parfum - Mystic Oud",brand:"khaadi",brandLabel:"Khaadi",category:"fragrance",price:3990,img:"https://cdn.shopify.com/s/files/1/0706/3253/8159/files/HighLife-1.jpg?v=1775213049",alt:"Khaadi Eau De Parfum Mystic Oud",notes:"Woody, Oud, Musk",size:"50ml"},
+        {name:"Printed Lawn 3PC CL-42307",brand:"gulahmed",brandLabel:"Gul Ahmed",category:"unstitched",price:4690,img:"https://cdn.shopify.com/s/files/1/0706/3253/8159/files/scf-43013_1_-_copy.jpg?v=1758371133",alt:"Gul Ahmed Printed Lawn 3PC CL-42307"},
+        {name:"Embroidered Lawn CL-42211",brand:"gulahmed",brandLabel:"Gul Ahmed",category:"unstitched",price:5490,img:"https://cdn.shopify.com/s/files/1/0706/3253/8159/files/scf-43006_1_-_copy.jpg?v=1758371130",alt:"Gul Ahmed Embroidered Lawn CL-42211"},
+        {name:"Digital Printed 2PC CL-42104",brand:"gulahmed",brandLabel:"Gul Ahmed",category:"unstitched",price:3290,img:"https://cdn.shopify.com/s/files/1/0706/3253/8159/files/scf-43002_1.jpg?v=1758371134",alt:"Gul Ahmed Digital Printed 2PC"},
+        {name:"Premium Chiffon 3PC",brand:"gulahmed",brandLabel:"Gul Ahmed",category:"unstitched",price:8990,img:"https://cdn.shopify.com/s/files/1/0706/3253/8159/files/scf-43014_1.jpg?v=1758371131",alt:"Gul Ahmed Premium Chiffon 3PC"},
+        {name:"Embroidered Cambric 3PC",brand:"gulahmed",brandLabel:"Gul Ahmed",category:"stitched",price:5990,img:"https://cdn.shopify.com/s/files/1/0706/3253/8159/files/scf-43003_2.jpg?v=1758371131",alt:"Gul Ahmed Embroidered Cambric 3PC"},
+        {name:"Leather Sandals - Brown",brand:"gulahmed",brandLabel:"Gul Ahmed",category:"accessory",price:3490,img:"https://cdn.shopify.com/s/files/1/0740/1753/8280/files/SS25GSH-FSD-009_7d606544-ce78-4c58-b989-2e2715d1e072.jpg?v=1756729132",alt:"Gul Ahmed Leather Sandals Brown"},
+        {name:"Handbag - Structured Tote",brand:"gulahmed",brandLabel:"Gul Ahmed",category:"accessory",price:5990,img:"https://cdn.shopify.com/s/files/1/0620/8788/9062/files/MBG-W25-16CamelFront_A_c115b6d2-bdd4-4c6d-a617-7162b1a5d2d7.jpg?v=1762953996",alt:"Gul Ahmed Structured Tote Handbag"},
+        {name:"Embroidered Lawn 3PC H241-016B",brand:"sanasafinaz",brandLabel:"Sana Safinaz",category:"unstitched",price:6990,img:"https://cdn.shopify.com/s/files/1/0740/1753/8280/files/R-48_2.jpg?v=1776425841",alt:"Sana Safinaz Embroidered Lawn 3PC"},
+        {name:"Digital Printed Lawn 3PC",brand:"sanasafinaz",brandLabel:"Sana Safinaz",category:"unstitched",price:4990,img:"https://cdn.shopify.com/s/files/1/0740/1753/8280/files/SS23GEXE413_1.jpg?v=1776423468",alt:"Sana Safinaz Digital Printed Lawn"},
+        {name:"Luxury Lawn Embroidered",brand:"sanasafinaz",brandLabel:"Sana Safinaz",category:"unstitched",price:8490,img:"https://cdn.shopify.com/s/files/1/0740/1753/8280/files/FW23STP502_1.jpg?v=1776422916",alt:"Sana Safinaz Luxury Lawn Embroidered"},
+        {name:"Stitched Printed 2PC",brand:"sanasafinaz",brandLabel:"Sana Safinaz",category:"stitched",price:4290,img:"https://cdn.shopify.com/s/files/1/0740/1753/8280/files/SS23GBSP177_1.jpg?v=1776422530",alt:"Sana Safinaz Stitched Printed 2PC"},
+        {name:"Woven Tote Bag",brand:"sanasafinaz",brandLabel:"Sana Safinaz",category:"accessory",price:4990,img:"https://cdn.shopify.com/s/files/1/0620/8788/9062/files/MBG-W25-14_Red_Front_A.jpg?v=1763735764",alt:"Sana Safinaz Woven Tote Bag"},
+        {name:"Printed Lawn 3 Piece Suit",brand:"jj",brandLabel:"Junaid Jamshed",category:"stitched",price:5290,img:"https://www.junaidjamshed.com/media/catalog/product/j/j/jjlt-26-8104.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=240&canvas=240:300",alt:"J. Printed Lawn 3 Piece"},
+        {name:"Embroidered Lawn 3PC Stitched",brand:"jj",brandLabel:"Junaid Jamshed",category:"stitched",price:6490,img:"https://www.junaidjamshed.com/media/catalog/product/j/j/jjlt-26-8103.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=240&canvas=240:300",alt:"J. Embroidered Lawn 3PC Stitched"},
+        {name:"Unstitched Lawn 3PC Floral",brand:"jj",brandLabel:"Junaid Jamshed",category:"unstitched",price:4590,img:"https://www.junaidjamshed.com/media/catalog/product/j/j/jjlt-26-8101.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=240&canvas=240:300",alt:"J. Unstitched Lawn 3PC Floral"},
+        {name:"Festive Embroidered 3PC",brand:"jj",brandLabel:"Junaid Jamshed",category:"stitched",price:7990,img:"https://www.junaidjamshed.com/media/catalog/product/2/5/25-3561-1_1_.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=240&canvas=240:300",alt:"J. Festive Embroidered 3PC"},
+        {name:"J. Pour Femme EDP 100ml",brand:"jj",brandLabel:"Junaid Jamshed",category:"fragrance",price:4500,img:"https://cdn.shopify.com/s/files/1/0620/8788/9062/files/Sand_A.jpg?v=1739450714",alt:"J. Pour Femme Eau De Parfum",notes:"Floral, Woody, Musk",size:"100ml"},
+        {name:"Wasim Akram 502 For Her",brand:"jj",brandLabel:"Junaid Jamshed",category:"fragrance",price:3800,img:"https://cdn.shopify.com/s/files/1/0620/8788/9062/files/DUNE_A.jpg?v=1739450697",alt:"J. Wasim Akram 502 For Her",notes:"Rose, Vanilla, Amber",size:"100ml"},
+        {name:"J. Orientale EDP",brand:"jj",brandLabel:"Junaid Jamshed",category:"fragrance",price:5200,img:"https://cdn.shopify.com/s/files/1/0620/8788/9062/files/Serenadac.jpg?v=1736247236",alt:"J. Orientale Eau De Parfum",notes:"Oud, Spice, Sandalwood",size:"100ml"},
+        {name:"Printed Lawn 2PC Unstitched",brand:"saya",brandLabel:"Saya",category:"unstitched",price:2490,img:"https://cdn.shopify.com/s/files/1/0184/5074/3360/files/sp-12327-1thumbnail.jpg?v=1776429547",alt:"Saya Printed Lawn 2PC Unstitched"},
+        {name:"Embroidered Lawn 3PC Unstitched",brand:"saya",brandLabel:"Saya",category:"unstitched",price:4290,img:"https://cdn.shopify.com/s/files/1/0184/5074/3360/files/u01-26010-p04a-1thumbnail.jpg?v=1776426703",alt:"Saya Embroidered Lawn 3PC"},
+        {name:"Stitched Embroidered 2PC",brand:"saya",brandLabel:"Saya",category:"stitched",price:4990,img:"https://cdn.shopify.com/s/files/1/0184/5074/3360/files/U01-25396-31A-1Thumbnail_fadd38e0-2521-40bb-ab1f-20d2d877b949.jpg?v=1776424130",alt:"Saya Stitched Embroidered 2PC"},
+        {name:"Printed Cambric 3PC Stitched",brand:"saya",brandLabel:"Saya",category:"stitched",price:5290,img:"https://cdn.shopify.com/s/files/1/0184/5074/3360/files/sp-12634-1thumbnail_f69e315b-a8ec-4576-b114-5f487f165750.jpg?v=1776412230",alt:"Saya Printed Cambric 3PC"},
+        {name:"Digital Print Lawn 2PC",brand:"saya",brandLabel:"Saya",category:"unstitched",price:2190,img:"https://cdn.shopify.com/s/files/1/0184/5074/3360/files/sp-10985-1thumbnail.jpg?v=1776410074",alt:"Saya Digital Print Lawn 2PC"},
+        {name:"Sapphire Bloom EDP 50ml",brand:"sapphire",brandLabel:"Sapphire",category:"fragrance",price:3490,img:"https://cdn.shopify.com/s/files/1/0620/8788/9062/files/Lavelled.jpg?v=1736247346",alt:"Sapphire Bloom Eau De Parfum",notes:"Floral, Fruity, Amber",size:"50ml"}
+    ];
+
+    function renderProducts(products) {
+        var grid = document.getElementById('productGrid');
+        grid.innerHTML = '';
+        if (products.length === 0) {
+            grid.innerHTML = '<div class="col-12 text-center py-5"><i class="fas fa-search fa-3x mb-3" style="color:var(--accent);opacity:0.4;"></i><h4 style="color:var(--primary);">No Products Found</h4><p class="text-muted">Try adjusting your filters</p></div>';
+            document.getElementById('resultCount').textContent = 'No products found';
+            return;
+        }
+        document.getElementById('resultCount').textContent = 'Showing ' + products.length + ' products';
+        products.forEach(function(p) {
+            var extraInfo = '';
+            if (p.category === 'fragrance') {
+                extraInfo = '<div style="font-size:0.75rem;color:#888;margin-bottom:8px;"><i class="fas fa-wind me-1"></i>' + (p.notes||'') + ' | ' + (p.size||'') + '</div>';
+            }
+            var card = '<div class="col-lg-4 col-md-6 product-item animate-on-scroll visible">' +
+                '<div class="product-card">' +
+                '<div class="product-img-wrap">' +
+                '<img src="' + p.img + '" alt="' + p.alt + '" onerror="this.parentElement.innerHTML=\'<div class=\\\'img-placeholder\\\'><i class=\\\'fas fa-image\\\'></i><span>' + p.brandLabel + '</span></div>\'">' +
+                '<span class="product-badge">' + p.category.charAt(0).toUpperCase() + p.category.slice(1) + '</span>' +
+                '<div class="product-actions"><button class="btn-wishlist" onclick="toggleWishlist(this)"><i class="far fa-heart"></i></button><button><i class="fas fa-eye"></i></button></div>' +
+                '</div><div class="product-info">' +
+                '<div class="product-brand">' + p.brandLabel + '</div>' +
+                '<div class="product-name">' + p.name + '</div>' + extraInfo +
+                '<div class="product-price">PKR ' + p.price.toLocaleString() + '</div>' +
+                '<button class="btn-add-cart" onclick="addToCart()">Add to Cart</button>' +
+                '</div></div></div>';
+            grid.innerHTML += card;
+        });
+    }
+
+    function filterProducts() {
+        var cats = [];
+        if (document.getElementById('catStitched').checked) cats.push('stitched');
+        if (document.getElementById('catUnstitched').checked) cats.push('unstitched');
+        if (document.getElementById('catAccessory').checked) cats.push('accessory');
+        if (document.getElementById('catFragrance').checked) cats.push('fragrance');
+        var brands = [];
+        if (document.getElementById('brSapphire').checked) brands.push('sapphire');
+        if (document.getElementById('brMariab').checked) brands.push('mariab');
+        if (document.getElementById('brKhaadi').checked) brands.push('khaadi');
+        if (document.getElementById('brGulahmed').checked) brands.push('gulahmed');
+        if (document.getElementById('brSanasafinaz').checked) brands.push('sanasafinaz');
+        if (document.getElementById('brJj').checked) brands.push('jj');
+        if (document.getElementById('brSaya').checked) brands.push('saya');
+        var maxPrice = parseInt(document.getElementById('priceRange').value);
+        var filtered = allProducts.filter(function(p) {
+            return cats.indexOf(p.category) !== -1 && brands.indexOf(p.brand) !== -1 && p.price <= maxPrice;
+        });
+        var sort = document.getElementById('sortSelect').value;
+        if (sort === 'low') filtered.sort(function(a, b) { return a.price - b.price; });
+        else if (sort === 'high') filtered.sort(function(a, b) { return b.price - a.price; });
+        else if (sort === 'name') filtered.sort(function(a, b) { return a.name.localeCompare(b.name); });
+        renderProducts(filtered);
+    }
+
+    function resetFilters() {
+        document.querySelectorAll('.filter-sidebar .form-check-input').forEach(function(cb) { cb.checked = true; });
+        document.getElementById('priceRange').value = 50000;
+        document.getElementById('priceDisplay').textContent = 'PKR 1,000 — PKR 50,000';
+        document.getElementById('sortSelect').value = 'default';
+        filterProducts();
+    }
+
+    (function() {
+        var params = new URLSearchParams(window.location.search);
+        var cat = params.get('category');
+        if (cat) {
+            document.getElementById('catStitched').checked = cat === 'stitched';
+            document.getElementById('catUnstitched').checked = cat === 'unstitched';
+            document.getElementById('catAccessory').checked = cat === 'accessories';
+            document.getElementById('catFragrance').checked = cat === 'fragrances';
+        }
+        filterProducts();
+
+        var navbar = document.getElementById('mainNavbar'), backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', function() { navbar.classList.toggle('scrolled', window.scrollY > 50); backToTop.classList.toggle('show', window.scrollY > 400); });
+        backToTop.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+        var searchToggle = document.getElementById('searchToggle'), searchOverlay = document.getElementById('searchOverlay'), closeSearch = document.getElementById('closeSearch');
+        searchToggle.addEventListener('click', function(e) { e.preventDefault(); searchOverlay.classList.add('active'); document.getElementById('searchInput').focus(); });
+        closeSearch.addEventListener('click', function() { searchOverlay.classList.remove('active'); });
+        searchOverlay.addEventListener('click', function(e) { if (e.target === searchOverlay) searchOverlay.classList.remove('active'); });
+        document.addEventListener('keydown', function(e) { if (e.key === 'Escape') searchOverlay.classList.remove('active'); });
+
+        var cartCount = 0;
+        window.addToCart = function() { cartCount++; document.getElementById('cartBadge').textContent = cartCount; };
+        window.toggleWishlist = function(btn) { var i = btn.querySelector('i'); i.classList.toggle('far'); i.classList.toggle('fas'); btn.classList.toggle('wishlisted'); };
+    })();
+    </script>
+    <script src="app.js"></script>
+</body>
+</html>

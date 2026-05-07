@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Compare Pakistan's top fashion brands side by side at Madam's Boutique — Sapphire, Maria B, Khaadi, Gul Ahmed, Sana Safinaz, Junaid Jamshed & Saya.">
+    <title>Brand Comparison — Madam's Boutique</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-boutique fixed-top" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 60" height="48"><defs><linearGradient id="roseGold" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#C9A96E"/><stop offset="100%" style="stop-color:#F2D4C2"/></linearGradient></defs><text x="28" y="35" font-family="'Playfair Display', Georgia, serif" font-size="28" font-weight="700" fill="#6B2737" letter-spacing="1">Madam's</text><text x="190" y="35" font-family="'Playfair Display', Georgia, serif" font-size="28" font-weight="700" fill="#6B2737" letter-spacing="1">Boutique</text><path d="M33 8 L38 2 L40 6 L42 2 L47 8" stroke="#C9A96E" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="40" cy="1" r="1" fill="#C9A96E"/><path d="M22 14 Q20 10 24 8 Q28 6 30 10" stroke="#C9A96E" stroke-width="1" fill="none" opacity="0.6"/><path d="M48 14 Q50 10 46 8 Q42 6 40 10" stroke="#C9A96E" stroke-width="1" fill="none" opacity="0.6"/><text x="100" y="52" font-family="'Lato', Arial, sans-serif" font-size="10.5" fill="#C9A96E" letter-spacing="3">Where Style Meets Elegance</text></svg>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"><i class="fas fa-bars" style="color:var(--primary);"></i></button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="brands.html">Brands</a></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="collection.html" role="button" data-bs-toggle="dropdown">Collection</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="collection.html?category=stitched">Stitched</a></li><li><a class="dropdown-item" href="collection.html?category=unstitched">Unstitched</a></li><li><a class="dropdown-item" href="collection.html?category=accessories">Accessories</a></li><li><a class="dropdown-item" href="collection.html?category=fragrances">Fragrances</a></li></ul></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="compare.html">Compare</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <ul class="navbar-nav navbar-icons">
+                    <li class="nav-item"><a class="nav-link" href="#" id="searchToggle"><i class="fas fa-search"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-heart"></i><span class="badge">0</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-shopping-bag"></i><span class="badge">0</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="search-overlay" id="searchOverlay"><button class="close-search" id="closeSearch"><i class="fas fa-times"></i></button><div class="search-box"><input type="text" placeholder="Search for products, brands..." id="searchInput"></div></div>
+
+    <section class="page-hero">
+        <h1>Brand Comparison</h1>
+        <p>Compare your favorite brands side by side</p>
+        <div class="breadcrumb-custom"><a href="index.html">Home</a><span>/</span><span style="color:var(--white);">Compare</span></div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-title animate-on-scroll">
+                <h2>Select Brands to Compare</h2>
+                <p>Choose 2 or 3 brands from the dropdowns below</p>
+            </div>
+
+            <div class="row g-3 justify-content-center mb-5">
+                <div class="col-md-3">
+                    <select class="form-select" id="brand1" onchange="updateComparison()" style="border-radius:50px;border:2px solid var(--accent);padding:12px 20px;font-weight:700;">
+                        <option value="">Select Brand 1</option>
+                        <option value="sapphire" selected>Sapphire</option>
+                        <option value="mariab">Maria B</option>
+                        <option value="khaadi">Khaadi</option>
+                        <option value="gulahmed">Gul Ahmed</option>
+                        <option value="sanasafinaz">Sana Safinaz</option>
+                        <option value="jj">Junaid Jamshed</option>
+                        <option value="saya">Saya</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <select class="form-select" id="brand2" onchange="updateComparison()" style="border-radius:50px;border:2px solid var(--accent);padding:12px 20px;font-weight:700;">
+                        <option value="">Select Brand 2</option>
+                        <option value="sapphire">Sapphire</option>
+                        <option value="mariab" selected>Maria B</option>
+                        <option value="khaadi">Khaadi</option>
+                        <option value="gulahmed">Gul Ahmed</option>
+                        <option value="sanasafinaz">Sana Safinaz</option>
+                        <option value="jj">Junaid Jamshed</option>
+                        <option value="saya">Saya</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <select class="form-select" id="brand3" onchange="updateComparison()" style="border-radius:50px;border:2px solid var(--accent);padding:12px 20px;font-weight:700;">
+                        <option value="">Select Brand 3 (optional)</option>
+                        <option value="sapphire">Sapphire</option>
+                        <option value="mariab">Maria B</option>
+                        <option value="khaadi" selected>Khaadi</option>
+                        <option value="gulahmed">Gul Ahmed</option>
+                        <option value="sanasafinaz">Sana Safinaz</option>
+                        <option value="jj">Junaid Jamshed</option>
+                        <option value="saya">Saya</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="table-responsive animate-on-scroll">
+                <table class="table comparison-table" id="comparisonTable">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th id="th1">Sapphire</th>
+                            <th id="th2">Maria B</th>
+                            <th id="th3">Khaadi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="comparisonBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-boutique">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 60" height="42" class="mb-3"><defs><linearGradient id="roseGoldFooter" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#C9A96E"/><stop offset="100%" style="stop-color:#F2D4C2"/></linearGradient></defs><text x="28" y="35" font-family="'Playfair Display', Georgia, serif" font-size="28" font-weight="700" fill="#FFFFFF" letter-spacing="1"><tspan fill="url(#roseGoldFooter)">M</tspan>adam's</text><text x="190" y="35" font-family="'Playfair Display', Georgia, serif" font-size="28" font-weight="700" fill="#FFFFFF" letter-spacing="1">Boutique</text><text x="100" y="52" font-family="'Lato', Arial, sans-serif" font-size="10.5" fill="#C9A96E" letter-spacing="3">Where Style Meets Elegance</text></svg>
+                    <p>Your premier destination for authentic Pakistani fashion.</p>
+                    <div class="footer-social"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-pinterest-p"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a></div>
+                </div>
+                <div class="col-lg-2 col-md-6"><h5>Quick Links</h5><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="collection.html">Collection</a></li><li><a href="brands.html">Brands</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="compare.html">Compare</a></li></ul></div>
+                <div class="col-lg-3 col-md-6"><h5>Our Brands</h5><ul class="footer-links"><li><a href="https://pk.sapphireonline.pk" target="_blank" rel="noopener noreferrer">Sapphire</a></li><li><a href="https://www.mariab.pk" target="_blank" rel="noopener noreferrer">Maria B</a></li><li><a href="https://pk.khaadi.com" target="_blank" rel="noopener noreferrer">Khaadi</a></li><li><a href="https://www.gulahmedshop.com" target="_blank" rel="noopener noreferrer">Gul Ahmed</a></li><li><a href="https://sanasafinaz.com" target="_blank" rel="noopener noreferrer">Sana Safinaz</a></li><li><a href="https://www.junaidjamshed.com" target="_blank" rel="noopener noreferrer">Junaid Jamshed</a></li><li><a href="https://saya.pk" target="_blank" rel="noopener noreferrer">Saya</a></li></ul></div>
+                <div class="col-lg-3 col-md-6"><h5>Customer Care</h5><ul class="footer-links"><li><a href="contact.html">Contact Us</a></li><li><a href="about.html">About Us</a></li><li><a href="#">Shipping Policy</a></li><li><a href="#">Return Policy</a></li><li><a href="#">Privacy Policy</a></li></ul></div>
+            </div>
+            <div class="footer-bottom"><div class="row align-items-center"><div class="col-md-6"><p>&copy; 2024 Madam's Boutique. All Rights Reserved.</p></div><div class="col-md-6"><div class="payment-icons"><div class="payment-icon"><i class="fab fa-cc-visa me-1"></i> Visa</div><div class="payment-icon"><i class="fab fa-cc-mastercard me-1"></i> Mastercard</div><div class="payment-icon">JazzCash</div><div class="payment-icon">EasyPaisa</div></div></div></div></div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></button>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    var brandData = {
+        sapphire: {
+            name: "Sapphire",
+            priceRange: "PKR 1,500 – PKR 15,000",
+            categories: "Stitched, Unstitched, Accessories, Fragrances",
+            fabricQuality: '<span class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span> 4/5',
+            designStyle: "Contemporary, Minimalist, Trendy",
+            occasion: "Casual, Semi-Formal, Daily Wear",
+            returnPolicy: "30-day easy returns with tags intact",
+            onlineAvailability: "Full catalog at pk.sapphireonline.pk",
+            flagshipStores: "Karachi, Lahore, Islamabad, Faisalabad, Multan, Peshawar (30+ outlets)"
+        },
+        mariab: {
+            name: "Maria B",
+            priceRange: "PKR 3,000 – PKR 50,000+",
+            categories: "Stitched, Unstitched, Luxury Formals, Jewelry, Bags",
+            fabricQuality: '<span class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span> 5/5',
+            designStyle: "Luxury, Elegant, Bridal, High Fashion",
+            occasion: "Formal, Bridal, Party, Festive",
+            returnPolicy: "15-day exchange policy, no returns on sale items",
+            onlineAvailability: "Full catalog at mariab.pk",
+            flagshipStores: "Karachi, Lahore, Islamabad, Rawalpindi (20+ outlets)"
+        },
+        khaadi: {
+            name: "Khaadi",
+            priceRange: "PKR 1,200 – PKR 12,000",
+            categories: "Stitched, Unstitched (Fabrics), Fragrances",
+            fabricQuality: '<span class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span> 4/5',
+            designStyle: "Artisan, Handwoven, Bohemian, Bold Prints",
+            occasion: "Casual, Semi-Formal, Festive",
+            returnPolicy: "14-day return/exchange with original receipt",
+            onlineAvailability: "Full catalog at pk.khaadi.com",
+            flagshipStores: "Karachi, Lahore, Islamabad, Faisalabad (50+ outlets nationwide)"
+        },
+        gulahmed: {
+            name: "Gul Ahmed",
+            priceRange: "PKR 1,000 – PKR 20,000",
+            categories: "Stitched, Unstitched, Accessories (Bags & Shoes), Home Textiles",
+            fabricQuality: '<span class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></span> 4.5/5',
+            designStyle: "Classic, Timeless, Traditional & Modern Fusion",
+            occasion: "Casual, Formal, Festive, Daily Wear",
+            returnPolicy: "30-day return policy for online purchases",
+            onlineAvailability: "Full catalog at gulahmedshop.com",
+            flagshipStores: "Karachi, Lahore, Islamabad, Hyderabad (70+ Ideas stores nationwide)"
+        },
+        sanasafinaz: {
+            name: "Sana Safinaz",
+            priceRange: "PKR 2,500 – PKR 35,000",
+            categories: "Stitched, Unstitched, Accessories",
+            fabricQuality: '<span class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span> 5/5',
+            designStyle: "Sophisticated, Luxurious Embroidery, Trendsetting",
+            occasion: "Formal, Party, Bridal, Festive",
+            returnPolicy: "7-day exchange policy on unused items",
+            onlineAvailability: "Full catalog at sanasafinaz.com",
+            flagshipStores: "Karachi, Lahore, Islamabad (15+ outlets)"
+        },
+        jj: {
+            name: "Junaid Jamshed",
+            priceRange: "PKR 1,500 – PKR 15,000",
+            categories: "Stitched, Unstitched, Fragrances, Men's Wear",
+            fabricQuality: '<span class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span> 4/5',
+            designStyle: "Modest, Traditional, Elegant, Cultural",
+            occasion: "Casual, Formal, Religious, Festive",
+            returnPolicy: "15-day return policy with tags attached",
+            onlineAvailability: "Full catalog at junaidjamshed.com",
+            flagshipStores: "Karachi, Lahore, Islamabad, Peshawar, Quetta (100+ outlets nationwide)"
+        },
+        saya: {
+            name: "Saya",
+            priceRange: "PKR 1,200 – PKR 8,000",
+            categories: "Stitched, Unstitched",
+            fabricQuality: '<span class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></span> 3.5/5',
+            designStyle: "Youthful, Artistic, Fresh Prints, Affordable Luxury",
+            occasion: "Casual, Daily Wear, Semi-Formal",
+            returnPolicy: "10-day exchange on unused items",
+            onlineAvailability: "Full catalog at saya.pk",
+            flagshipStores: "Karachi, Lahore, Islamabad, Faisalabad (25+ outlets)"
+        }
+    };
+
+    var rows = [
+        {label:"Price Range",key:"priceRange"},
+        {label:"Categories Available",key:"categories"},
+        {label:"Fabric Quality",key:"fabricQuality"},
+        {label:"Design Style",key:"designStyle"},
+        {label:"Occasion",key:"occasion"},
+        {label:"Return Policy",key:"returnPolicy"},
+        {label:"Online Availability",key:"onlineAvailability"},
+        {label:"Flagship Stores",key:"flagshipStores"}
+    ];
+
+    function updateComparison(){
+        var b1=document.getElementById('brand1').value;
+        var b2=document.getElementById('brand2').value;
+        var b3=document.getElementById('brand3').value;
+        var brands=[];
+        if(b1&&brandData[b1])brands.push(brandData[b1]);
+        if(b2&&brandData[b2])brands.push(brandData[b2]);
+        if(b3&&brandData[b3])brands.push(brandData[b3]);
+        if(brands.length<2){document.getElementById('comparisonBody').innerHTML='<tr><td colspan="4" class="text-center py-4 text-muted">Please select at least 2 brands to compare</td></tr>';return;}
+        var ths=document.querySelectorAll('#comparisonTable thead th');
+        ths[1].textContent=brands[0]?brands[0].name:'';
+        ths[2].textContent=brands[1]?brands[1].name:'';
+        if(brands[2]){ths[3].textContent=brands[2].name;ths[3].style.display='';}else{ths[3].style.display='none';}
+        var tbody=document.getElementById('comparisonBody');
+        tbody.innerHTML='';
+        rows.forEach(function(r){
+            var tr='<tr><td>'+r.label+'</td>';
+            tr+='<td>'+(brands[0]?brands[0][r.key]:'')+'</td>';
+            tr+='<td>'+(brands[1]?brands[1][r.key]:'')+'</td>';
+            if(brands[2]){tr+='<td>'+brands[2][r.key]+'</td>';}
+            tr+='</tr>';
+            tbody.innerHTML+=tr;
+        });
+    }
+
+    (function(){
+        updateComparison();
+        var navbar=document.getElementById('mainNavbar'),backToTop=document.getElementById('backToTop');
+        window.addEventListener('scroll',function(){navbar.classList.toggle('scrolled',window.scrollY>50);backToTop.classList.toggle('show',window.scrollY>400);});
+        backToTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+        var searchToggle=document.getElementById('searchToggle'),searchOverlay=document.getElementById('searchOverlay'),closeSearch=document.getElementById('closeSearch');
+        searchToggle.addEventListener('click',function(e){e.preventDefault();searchOverlay.classList.add('active');document.getElementById('searchInput').focus();});
+        closeSearch.addEventListener('click',function(){searchOverlay.classList.remove('active');});
+        searchOverlay.addEventListener('click',function(e){if(e.target===searchOverlay)searchOverlay.classList.remove('active');});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')searchOverlay.classList.remove('active');});
+        document.querySelectorAll('.animate-on-scroll').forEach(function(el){new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting)entry.target.classList.add('visible');});},{threshold:0.1}).observe(el);});
+    })();
+    </script>
+    <script src="app.js"></script>
+</body>
+</html>

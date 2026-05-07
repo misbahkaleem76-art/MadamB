@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore all 7 premium Pakistani fashion brands at Madam's Boutique — Sapphire, Maria B, Khaadi, Gul Ahmed, Sana Safinaz, Junaid Jamshed & Saya.">
+    <title>Our Brands — Madam's Boutique</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-boutique fixed-top" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 60" height="48">
+                    <defs><linearGradient id="roseGold" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#C9A96E"/><stop offset="100%" style="stop-color:#F2D4C2"/></linearGradient></defs>
+                    <text x="28" y="35" font-family="'Playfair Display', Georgia, serif" font-size="28" font-weight="700" fill="#6B2737" letter-spacing="1">Madam's</text>
+                    <text x="190" y="35" font-family="'Playfair Display', Georgia, serif" font-size="28" font-weight="700" fill="#6B2737" letter-spacing="1">Boutique</text>
+                    <path d="M33 8 L38 2 L40 6 L42 2 L47 8" stroke="#C9A96E" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="40" cy="1" r="1" fill="#C9A96E"/>
+                    <path d="M22 14 Q20 10 24 8 Q28 6 30 10" stroke="#C9A96E" stroke-width="1" fill="none" opacity="0.6"/>
+                    <path d="M48 14 Q50 10 46 8 Q42 6 40 10" stroke="#C9A96E" stroke-width="1" fill="none" opacity="0.6"/>
+                    <text x="100" y="52" font-family="'Lato', Arial, sans-serif" font-size="10.5" fill="#C9A96E" letter-spacing="3">Where Style Meets Elegance</text>
+                </svg>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"><i class="fas fa-bars" style="color: var(--primary);"></i></button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="brands.html">Brands</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="collection.html" role="button" data-bs-toggle="dropdown">Collection</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="collection.html?category=stitched">Stitched</a></li>
+                            <li><a class="dropdown-item" href="collection.html?category=unstitched">Unstitched</a></li>
+                            <li><a class="dropdown-item" href="collection.html?category=accessories">Accessories</a></li>
+                            <li><a class="dropdown-item" href="collection.html?category=fragrances">Fragrances</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="compare.html">Compare</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <ul class="navbar-nav navbar-icons">
+                    <li class="nav-item"><a class="nav-link" href="#" id="searchToggle"><i class="fas fa-search"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-heart"></i><span class="badge">0</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-shopping-bag"></i><span class="badge">0</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="search-overlay" id="searchOverlay">
+        <button class="close-search" id="closeSearch"><i class="fas fa-times"></i></button>
+        <div class="search-box"><input type="text" placeholder="Search for products, brands..." id="searchInput"></div>
+    </div>
+
+    <section class="page-hero">
+        <h1>Our Brands</h1>
+        <p>Pakistan's most prestigious fashion houses, all in one place</p>
+        <div class="breadcrumb-custom">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <span style="color: var(--white);">Brands</span>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-title animate-on-scroll">
+                <h2>Featured Brands</h2>
+                <p>Click on any brand to explore their exclusive collection</p>
+            </div>
+            <div class="row g-4">
+
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="brand-card" data-bs-toggle="modal" data-bs-target="#sapphireModal">
+                        <div class="brand-icon"><i class="fas fa-gem"></i></div>
+                        <h4>Sapphire</h4>
+                        <p>Contemporary designs with premium fabrics. Known for vibrant prints and modern silhouettes for the fashion-forward woman.</p>
+                        <a href="https://pk.sapphireonline.pk" target="_blank" rel="noopener noreferrer" class="d-block text-muted mb-3" style="font-size:0.8rem;" onclick="event.stopPropagation();">pk.sapphireonline.pk</a>
+                        <button class="btn btn-primary-custom btn-sm">View Collection</button>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="brand-card" data-bs-toggle="modal" data-bs-target="#mariabModal">
+                        <div class="brand-icon"><i class="fas fa-crown"></i></div>
+                        <h4>Maria B</h4>
+                        <p>Luxury fashion with intricate embroidery and elegant designs. A pioneer of bridal and formal wear in Pakistan.</p>
+                        <a href="https://www.mariab.pk" target="_blank" rel="noopener noreferrer" class="d-block text-muted mb-3" style="font-size:0.8rem;" onclick="event.stopPropagation();">mariab.pk</a>
+                        <button class="btn btn-primary-custom btn-sm">View Collection</button>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="brand-card" data-bs-toggle="modal" data-bs-target="#khaadiModal">
+                        <div class="brand-icon"><i class="fas fa-leaf"></i></div>
+                        <h4>Khaadi</h4>
+                        <p>Artisan craftsmanship meets modern fashion. Celebrated for handwoven fabrics and bold, artistic prints.</p>
+                        <a href="https://pk.khaadi.com" target="_blank" rel="noopener noreferrer" class="d-block text-muted mb-3" style="font-size:0.8rem;" onclick="event.stopPropagation();">pk.khaadi.com</a>
+                        <button class="btn btn-primary-custom btn-sm">View Collection</button>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="brand-card" data-bs-toggle="modal" data-bs-target="#gulahmedModal">
+                        <div class="brand-icon"><i class="fas fa-star"></i></div>
+                        <h4>Gul Ahmed</h4>
+                        <p>Heritage brand with over 70 years of textile excellence. Renowned for quality fabrics and timeless designs.</p>
+                        <a href="https://www.gulahmedshop.com" target="_blank" rel="noopener noreferrer" class="d-block text-muted mb-3" style="font-size:0.8rem;" onclick="event.stopPropagation();">gulahmedshop.com</a>
+                        <button class="btn btn-primary-custom btn-sm">View Collection</button>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="brand-card" data-bs-toggle="modal" data-bs-target="#sanasafinazModal">
+                        <div class="brand-icon"><i class="fas fa-feather-pointed"></i></div>
+                        <h4>Sana Safinaz</h4>
+                        <p>The power duo of Pakistani fashion. Known for sophisticated cuts, luxurious embroideries, and trendsetting design.</p>
+                        <a href="https://sanasafinaz.com" target="_blank" rel="noopener noreferrer" class="d-block text-muted mb-3" style="font-size:0.8rem;" onclick="event.stopPropagation();">sanasafinaz.com</a>
+                        <button class="btn btn-primary-custom btn-sm">View Collection</button>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="brand-card" data-bs-toggle="modal" data-bs-target="#jjModal">
+                        <div class="brand-icon"><i class="fas fa-mosque"></i></div>
+                        <h4>Junaid Jamshed</h4>
+                        <p>Modest fashion with elegant flair. Perfect blend of traditional values and contemporary styling for all occasions.</p>
+                        <a href="https://www.junaidjamshed.com" target="_blank" rel="noopener noreferrer" class="d-block text-muted mb-3" style="font-size:0.8rem;" onclick="event.stopPropagation();">junaidjamshed.com</a>
+                        <button class="btn btn-primary-custom btn-sm">View Collection</button>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mx-auto animate-on-scroll">
+                    <div class="brand-card" data-bs-toggle="modal" data-bs-target="#sayaModal">
+                        <div class="brand-icon"><i class="fas fa-palette"></i></div>
+                        <h4>Saya</h4>
+                        <p>Fresh, youthful designs with artistic prints. A rising star in Pakistani fashion known for affordable luxury.</p>
+                        <a href="https://saya.pk" target="_blank" rel="noopener noreferrer" class="d-block text-muted mb-3" style="font-size:0.8rem;" onclick="event.stopPropagation();">saya.pk</a>
+                        <button class="btn btn-primary-custom btn-sm">View Collection</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="modal fade" id="sapphireModal" tabindex="-1" aria-labelledby="sapphireModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="sapphireModalLabel"><i class="fas fa-gem me-2"></i>Sapphire Collection</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold" style="font-size:0.85rem;">Price Range Filter</label>
+                            <input type="range" class="form-range" min="1000" max="30000" value="30000" id="sapphirePriceRange" oninput="document.getElementById('sapphirePriceVal').textContent='PKR ' + parseInt(this.value).toLocaleString()">
+                            <div class="price-range-display" id="sapphirePriceVal">PKR 30,000</div>
+                        </div>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="product-card">
+                                <div class="product-img-wrap">
+                                    <img src="https://pk.sapphireonline.pk/dw/image/v2/BKSB_PRD/on/demandware.static/-/Sites-sapphire-master-catalog/default/dw2a0c2297/images/April26/10thApril26/PR6CASTV605S_999_2.JPG?sw=1000&sh=1200" alt="Sapphire Printed Lawn 2 Piece Suit - Summer Collection" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>Sapphire</span></div>'">
+                                    <span class="product-badge">Stitched</span>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-brand">Sapphire</div>
+                                    <div class="product-name">Printed Lawn 2 Piece Suit</div>
+                                    <div class="product-sizes">
+                                        <button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button>
+                                    </div>
+                                    <div class="product-price">PKR 3,490</div>
+                                    <button class="btn-add-cart" onclick="addToCart()">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="product-card">
+                                <div class="product-img-wrap">
+                                    <img src="https://pk.sapphireonline.pk/dw/image/v2/BKSB_PRD/on/demandware.static/-/Sites-sapphire-master-catalog/default/dwf711a675/images/April26/9thApril26/PR6CAHMV629S_999_2.JPG?sw=1000&sh=1200" alt="Sapphire Embroidered Cotton 3 Piece Suit" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>Sapphire</span></div>'">
+                                    <span class="product-badge">Stitched</span>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-brand">Sapphire</div>
+                                    <div class="product-name">Embroidered Cotton 3 Piece Suit</div>
+                                    <div class="product-sizes">
+                                        <button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button>
+                                    </div>
+                                    <div class="product-price">PKR 5,990</div>
+                                    <button class="btn-add-cart" onclick="addToCart()">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="product-card">
+                                <div class="product-img-wrap">
+                                    <img src="https://pk.sapphireonline.pk/dw/image/v2/BKSB_PRD/on/demandware.static/-/Sites-sapphire-master-catalog/default/dw21098552/images/April26/9thApril26/PES6SCHMV704_999_2.JPG?sw=1000&sh=1200" alt="Sapphire Digital Print Lawn 2PC - Unstitched" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>Sapphire</span></div>'">
+                                    <span class="product-badge">Unstitched</span>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-brand">Sapphire</div>
+                                    <div class="product-name">Digital Print Lawn 2PC</div>
+                                    <div class="product-sizes">
+                                        <button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button>
+                                    </div>
+                                    <div class="product-price">PKR 2,850</div>
+                                    <button class="btn-add-cart" onclick="addToCart()">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="product-card">
+                                <div class="product-img-wrap">
+                                    <img src="https://pk.sapphireonline.pk/dw/image/v2/BKSB_PRD/on/demandware.static/-/Sites-sapphire-master-catalog/default/dwf1037620/images/April26/9thApril26/PRS6SCHMV749_999_2.JPG?sw=1000&sh=1200" alt="Sapphire Embroidered Lawn 3PC Unstitched Suit" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>Sapphire</span></div>'">
+                                    <span class="product-badge">Unstitched</span>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-brand">Sapphire</div>
+                                    <div class="product-name">Embroidered Lawn 3PC Unstitched</div>
+                                    <div class="product-sizes">
+                                        <button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button>
+                                    </div>
+                                    <div class="product-price">PKR 5,290</div>
+                                    <button class="btn-add-cart" onclick="addToCart()">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="product-card">
+                                <div class="product-img-wrap">
+                                    <img src="https://pk.sapphireonline.pk/dw/image/v2/BKSB_PRD/on/demandware.static/-/Sites-sapphire-master-catalog/default/dw7673ab39/images/April26/9thApril26/PRS2CASTV621_999_2.JPG?sw=1000&sh=1200" alt="Sapphire Dyed Jacquard 2 Piece Stitched Suit" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>Sapphire</span></div>'">
+                                    <span class="product-badge">Stitched</span>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-brand">Sapphire</div>
+                                    <div class="product-name">Dyed Jacquard 2 Piece Suit</div>
+                                    <div class="product-sizes">
+                                        <button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button>
+                                    </div>
+                                    <div class="product-price">PKR 4,390</div>
+                                    <button class="btn-add-cart" onclick="addToCart()">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="product-card">
+                                <div class="product-img-wrap">
+                                    <img src="https://pk.sapphireonline.pk/dw/image/v2/BKSB_PRD/on/demandware.static/-/Sites-sapphire-master-catalog/default/dw6cfb0029/images/April26/9thApril26/PB26SCHMV735_999_2.JPG?sw=1000&sh=1200" alt="Sapphire Dyed Lawn Kurta - White" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>Sapphire</span></div>'">
+                                    <span class="product-badge">Stitched</span>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-brand">Sapphire</div>
+                                    <div class="product-name">Dyed Lawn Kurta - White</div>
+                                    <div class="product-sizes">
+                                        <button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button>
+                                    </div>
+                                    <div class="product-price">PKR 2,190</div>
+                                    <button class="btn-add-cart" onclick="addToCart()">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="product-card">
+                                <div class="product-img-wrap">
+                                    <img src="https://pk.sapphireonline.pk/dw/image/v2/BKSB_PRD/on/demandware.static/-/Sites-sapphire-master-catalog/default/dwb6ea6a1c/images/April26/9thApril26/PR6CAHMV625S_999_2.JPG?sw=1000&sh=1200" alt="Sapphire Printed Cambric 3 Piece Suit" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>Sapphire</span></div>'">
+                                    <span class="product-badge">Stitched</span>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-brand">Sapphire</div>
+                                    <div class="product-name">Printed Cambric 3 Piece Suit</div>
+                                    <div class="product-sizes">
+                                        <button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button>
+                                    </div>
+                                    <div class="product-price">PKR 4,790</div>
+                                    <button class="btn-add-cart" onclick="addToCart()">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="mariabModal" tabindex="-1" aria-labelledby="mariabModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="mariabModalLabel"><i class="fas fa-crown me-2"></i>Maria B Collection</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold" style="font-size:0.85rem;">Price Range Filter</label>
+                            <input type="range" class="form-range" min="1000" max="30000" value="30000" oninput="document.getElementById('mariabPriceVal').textContent='PKR ' + parseInt(this.value).toLocaleString()">
+                            <div class="price-range-display" id="mariabPriceVal">PKR 30,000</div>
+                        </div>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="product-card"><div class="product-img-wrap"><img src="https://cdn.shopify.com/s/files/1/0620/8788/9062/files/DWEF26122OffWhiteFront_A.jpg?v=1776340765" alt="Maria B M.Prints Embroidered Lawn 3PC" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>Maria B</span></div>'"><span class="product-badge">Unstitched</span></div><div class="product-info"><div class="product-brand">Maria B</div><div class="product-name">M.Prints Embroidered Lawn 3PC</div><div class="product-sizes"><button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button></div><div class="product-price">PKR 7,490</div><button class="btn-add-cart" onclick="addToCart()">Add to Cart</button></div></div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="product-card"><div class="product-img-wrap"><img src="https://cdn.shopify.com/s/files/1/0620/8788/9062/files/DWEA26102OffWhiteFront_A.jpg?v=1776247865" alt="Maria B Eid Lawn Collection Sage Green" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>Maria B</span></div>'"><span class="product-badge">Unstitched</span></div><div class="product-info"><div class="product-brand">Maria B</div><div class="product-name">Eid Lawn Collection Sage Green</div><div class="product-sizes"><button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button></div><div class="product-price">PKR 8,990</div><button class="btn-add-cart" onclick="addToCart()">Add to Cart</button></div></div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="product-card"><div class="product-img-wrap"><img src="https://cdn.shopify.com/s/files/1/0620/8788/9062/files/MSTEF2611Front_A.jpg?v=1776243605" alt="Maria B Premium Lawn Printed 3PC" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>Maria B</span></div>'"><span class="product-badge">Unstitched</span></div><div class="product-info"><div class="product-brand">Maria B</div><div class="product-name">Premium Lawn Printed 3PC</div><div class="product-sizes"><button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button></div><div class="product-price">PKR 5,490</div><button class="btn-add-cart" onclick="addToCart()">Add to Cart</button></div></div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="product-card"><div class="product-img-wrap"><img src="https://cdn.shopify.com/s/files/1/0620/8788/9062/files/DWEF2625LightBlueFront_A.jpg?v=1776244087" alt="Maria B Daily Wear Kurta Cream" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>Maria B</span></div>'"><span class="product-badge">Stitched</span></div><div class="product-info"><div class="product-brand">Maria B</div><div class="product-name">Daily Wear Kurta - Cream</div><div class="product-sizes"><button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button></div><div class="product-price">PKR 4,290</div><button class="btn-add-cart" onclick="addToCart()">Add to Cart</button></div></div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="product-card"><div class="product-img-wrap"><img src="https://cdn.shopify.com/s/files/1/0620/8788/9062/files/DWEF2625Front_A.jpg?v=1776244195" alt="Maria B Soiree Chiffon Ice Blue" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>Maria B</span></div>'"><span class="product-badge">Unstitched</span></div><div class="product-info"><div class="product-brand">Maria B</div><div class="product-name">Soiree Chiffon Embroidered - Ice Blue</div><div class="product-sizes"><button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button></div><div class="product-price">PKR 14,990</div><button class="btn-add-cart" onclick="addToCart()">Add to Cart</button></div></div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="product-card"><div class="product-img-wrap"><img src="https://cdn.shopify.com/s/files/1/0620/8788/9062/files/DWEf26205Front_A.jpg?v=1776244373" alt="Maria B M.Prints Voile 3PC Suit" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>Maria B</span></div>'"><span class="product-badge">Unstitched</span></div><div class="product-info"><div class="product-brand">Maria B</div><div class="product-name">M.Prints Voile 3PC Suit</div><div class="product-sizes"><button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button></div><div class="product-price">PKR 6,990</div><button class="btn-add-cart" onclick="addToCart()">Add to Cart</button></div></div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="product-card"><div class="product-img-wrap"><img src="https://cdn.shopify.com/s/files/1/0620/8788/9062/files/DWEA2634FeroziFront_A.jpg?v=1776244469" alt="Maria B Premium Pret Embroidered Dusty Pink" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>Maria B</span></div>'"><span class="product-badge">Stitched</span></div><div class="product-info"><div class="product-brand">Maria B</div><div class="product-name">Premium Pret Embroidered - Dusty Pink</div><div class="product-sizes"><button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button></div><div class="product-price">PKR 9,990</div><button class="btn-add-cart" onclick="addToCart()">Add to Cart</button></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="khaadiModal" tabindex="-1" aria-labelledby="khaadiModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="khaadiModalLabel"><i class="fas fa-leaf me-2"></i>Khaadi Collection</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row mb-4"><div class="col-md-6"><label class="form-label fw-bold" style="font-size:0.85rem;">Price Range Filter</label><input type="range" class="form-range" min="1000" max="30000" value="30000" oninput="document.getElementById('khaadiPriceVal').textContent='PKR ' + parseInt(this.value).toLocaleString()"><div class="price-range-display" id="khaadiPriceVal">PKR 30,000</div></div></div>
+                    <div class="row g-4">
+                        <div class="col-lg-4 col-md-6"><div class="product-card"><div class="product-img-wrap"><img src="https://pk.khaadi.com/dw/image/v2/BJTG_PRD/on/demandware.static/-/Sites-khaadi-master-catalog/default/dw7a37d7cf/images/hi-res/kw32b_multi_1.jpg?sw=400&sh=600" alt="Khaadi Printed Lawn 3 Piece Suit Green" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>Khaadi</span></div>'"><span class="product-badge">Stitched</span></div><div class="product-info"><div class="product-brand">Khaadi</div><div class="product-name">Printed Lawn 3 Piece Suit</div><div class="product-sizes"><button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button></div><div class="product-price">PKR 5,500</div><button class="btn-add-cart" onclick="addToCart()">Add to Cart</button></div></div></div>
+                        <div class="col-lg-4 col-md-6"><div class="product-card"><div class="product-img-wrap"><img src="https://pk.khaadi.com/dw/image/v2/BJTG_PRD/on/demandware.static/-/Sites-khaadi-master-catalog/default/dw97ffcafe/images/hi-res/kw38a_multi_1.jpg?sw=400&sh=600" alt="Khaadi Embroidered Lawn 2 Piece Suit Blue" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>Khaadi</span></div>'"><span class="product-badge">Stitched</span></div><div class="product-info"><div class="product-brand">Khaadi</div><div class="product-name">Embroidered Lawn 2 Piece Suit</div><div class="product-sizes"><button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button></div><div class="product-price">PKR 4,200</div><button class="btn-add-cart" onclick="addToCart()">Add to Cart</button></div></div></div>
+                        <div class="col-lg-4 col-md-6"><div class="product-card"><div class="product-img-wrap"><img src="https://pk.khaadi.com/dw/image/v2/BJTG_PRD/on/demandware.static/-/Sites-khaadi-master-catalog/default/dw73c99f2c/images/hi-res/25-09-10e3-02ta_multi_1.jpg?sw=400&sh=600" alt="Khaadi Printed Cambric 3 Piece Suit Maroon" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>Khaadi</span></div>'"><span class="product-badge">Stitched</span></div><div class="product-info"><div class="product-brand">Khaadi</div><div class="product-name">Printed Cambric 3 Piece Suit</div><div class="product-sizes"><button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button></div><div class="product-price">PKR 5,800</div><button class="btn-add-cart" onclick="addToCart()">Add to Cart</button></div></div></div>
+                        <div class="col-lg-4 col-md-6"><div class="product-card"><div class="product-img-wrap"><img src="https://pk.khaadi.com/dw/image/v2/BJTG_PRD/on/demandware.static/-/Sites-khaadi-master-catalog/default/dwea51b189/images/hi-res/25-10-11e1-07ta_multi_1.jpg?sw=400&sh=600" alt="Khaadi Unstitched Embroidered Lawn 3PC Pink" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>Khaadi</span></div>'"><span class="product-badge">Unstitched</span></div><div class="product-info"><div class="product-brand">Khaadi</div><div class="product-name">Embroidered Lawn 3PC Unstitched</div><div class="product-sizes"><button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button></div><div class="product-price">PKR 4,990</div><button class="btn-add-cart" onclick="addToCart()">Add to Cart</button></div></div></div>
+                        <div class="col-lg-4 col-md-6"><div class="product-card"><div class="product-img-wrap"><img src="https://pk.khaadi.com/dw/image/v2/BJTG_PRD/on/demandware.static/-/Sites-khaadi-master-catalog/default/dwd4ad6c6e/images/hi-res/25-06-6e8-01tb_multi_1.jpg?sw=400&sh=600" alt="Khaadi Printed Lawn 2PC Unstitched Yellow" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>Khaadi</span></div>'"><span class="product-badge">Unstitched</span></div><div class="product-info"><div class="product-brand">Khaadi</div><div class="product-name">Printed Lawn 2PC Unstitched</div><div class="product-sizes"><button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button></div><div class="product-price">PKR 3,200</div><button class="btn-add-cart" onclick="addToCart()">Add to Cart</button></div></div></div>
+                        <div class="col-lg-4 col-md-6"><div class="product-card"><div class="product-img-wrap"><img src="https://pk.khaadi.com/dw/image/v2/BJTG_PRD/on/demandware.static/-/Sites-khaadi-master-catalog/default/dwb9bfa200/images/hi-res/25-09-11e14-08ta_multi_1.jpg?sw=400&sh=600" alt="Khaadi Dyed Kurta Beige Essential" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>Khaadi</span></div>'"><span class="product-badge">Stitched</span></div><div class="product-info"><div class="product-brand">Khaadi</div><div class="product-name">Dyed Kurta - Beige Essential</div><div class="product-sizes"><button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button></div><div class="product-price">PKR 2,990</div><button class="btn-add-cart" onclick="addToCart()">Add to Cart</button></div></div></div>
+                        <div class="col-lg-4 col-md-6"><div class="product-card"><div class="product-img-wrap"><img src="https://pk.khaadi.com/dw/image/v2/BJTG_PRD/on/demandware.static/-/Sites-khaadi-master-catalog/default/dwe2fa6bbe/images/hi-res/25-09-12e2-02ta_multi_1.jpg?sw=400&sh=600" alt="Khaadi Signature 3 Piece Teal Suit" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>Khaadi</span></div>'"><span class="product-badge">Stitched</span></div><div class="product-info"><div class="product-brand">Khaadi</div><div class="product-name">Signature 3 Piece Suit - Teal</div><div class="product-sizes"><button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button></div><div class="product-price">PKR 7,500</div><button class="btn-add-cart" onclick="addToCart()">Add to Cart</button></div></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="gulahmedModal" tabindex="-1" aria-labelledby="gulahmedModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="gulahmedModalLabel"><i class="fas fa-star me-2"></i>Gul Ahmed Collection</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row mb-4"><div class="col-md-6"><label class="form-label fw-bold" style="font-size:0.85rem;">Price Range Filter</label><input type="range" class="form-range" min="1000" max="30000" value="30000" oninput="document.getElementById('gaPriceVal').textContent='PKR ' + parseInt(this.value).toLocaleString()"><div class="price-range-display" id="gaPriceVal">PKR 30,000</div></div></div>
+                    <div class="row g-4">
+                        <div class="col-lg-4 col-md-6"><div class="product-card"><div class="product-img-wrap"><img src="https://cdn.shopify.com/s/files/1/0706/3253/8159/files/scf-43013_1_-_copy.jpg?v=1758371133" alt="Gul Ahmed Printed Lawn 3PC Unstitched CL-42307" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>Gul Ahmed</span></div>'"><span class="product-badge">Unstitched</span></div><div class="product-info"><div class="product-brand">Gul Ahmed</div><div class="product-name">Printed Lawn 3PC CL-42307</div><div class="product-sizes"><button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button></div><div class="product-price">PKR 4,690</div><button class="btn-add-cart" onclick="addToCart()">Add to Cart</button></div></div></div>
+                        <div class="col-lg-4 col-md-6"><div class="product-card"><div class="product-img-wrap"><img src="https://cdn.shopify.com/s/files/1/0706/3253/8159/files/scf-43006_1_-_copy.jpg?v=1758371130" alt="Gul Ahmed Embroidered Lawn Suite CL-42211" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>Gul Ahmed</span></div>'"><span class="product-badge">Unstitched</span></div><div class="product-info"><div class="product-brand">Gul Ahmed</div><div class="product-name">Embroidered Lawn Suite CL-42211</div><div class="product-sizes"><button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button></div><div class="product-price">PKR 5,490</div><button class="btn-add-cart" onclick="addToCart()">Add to Cart</button></div></div></div>
+                        <div class="col-lg-4 col-md-6"><div class="product-card"><div class="product-img-wrap"><img src="https://cdn.shopify.com/s/files/1/0706/3253/8159/files/scf-43002_1.jpg?v=1758371134" alt="Gul Ahmed Digital Printed Lawn 2PC CL-42104" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>Gul Ahmed</span></div>'"><span class="product-badge">Unstitched</span></div><div class="product-info"><div class="product-brand">Gul Ahmed</div><div class="product-name">Digital Printed Lawn 2PC</div><div class="product-sizes"><button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button></div><div class="product-price">PKR 3,290</div><button class="btn-add-cart" onclick="addToCart()">Add to Cart</button></div></div></div>
+                        <div class="col-lg-4 col-md-6"><div class="product-card"><div class="product-img-wrap"><img src="https://cdn.shopify.com/s/files/1/0706/3253/8159/files/scf-43014_1.jpg?v=1758371131" alt="Gul Ahmed Premium Embroidered Chiffon 3PC" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>Gul Ahmed</span></div>'"><span class="product-badge">Unstitched</span></div><div class="product-info"><div class="product-brand">Gul Ahmed</div><div class="product-name">Premium Embroidered Chiffon 3PC</div><div class="product-sizes"><button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button></div><div class="product-price">PKR 8,990</div><button class="btn-add-cart" onclick="addToCart()">Add to Cart</button></div></div></div>
+                        <div class="col-lg-4 col-md-6"><div class="product-card"><div class="product-img-wrap"><img src="https://cdn.shopify.com/s/files/1/0706/3253/8159/files/scf-43019_1.jpg?v=1758371133" alt="Gul Ahmed Jacquard 3PC Suit CL-42402" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>Gul Ahmed</span></div>'"><span class="product-badge">Unstitched</span></div><div class="product-info"><div class="product-brand">Gul Ahmed</div><div class="product-name">Jacquard 3PC Suit CL-42402</div><div class="product-sizes"><button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button></div><div class="product-price">PKR 6,290</div><button class="btn-add-cart" onclick="addToCart()">Add to Cart</button></div></div></div>
+                        <div class="col-lg-4 col-md-6"><div class="product-card"><div class="product-img-wrap"><img src="https://cdn.shopify.com/s/files/1/0706/3253/8159/files/scf-43016_2.jpg?v=1758371132" alt="Gul Ahmed Printed Lawn Kurta CL-42109" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>Gul Ahmed</span></div>'"><span class="product-badge">Stitched</span></div><div class="product-info"><div class="product-brand">Gul Ahmed</div><div class="product-name">Printed Lawn Kurta CL-42109</div><div class="product-sizes"><button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button></div><div class="product-price">PKR 2,790</div><button class="btn-add-cart" onclick="addToCart()">Add to Cart</button></div></div></div>
+                        <div class="col-lg-4 col-md-6"><div class="product-card"><div class="product-img-wrap"><img src="https://cdn.shopify.com/s/files/1/0706/3253/8159/files/scf-43003_2.jpg?v=1758371131" alt="Gul Ahmed Embroidered Cambric 3PC CL-42615" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>Gul Ahmed</span></div>'"><span class="product-badge">Stitched</span></div><div class="product-info"><div class="product-brand">Gul Ahmed</div><div class="product-name">Embroidered Cambric 3PC</div><div class="product-sizes"><button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button></div><div class="product-price">PKR 5,990</div><button class="btn-add-cart" onclick="addToCart()">Add to Cart</button></div></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="sanasafinazModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-feather-pointed me-2"></i>Sana Safinaz Collection</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row mb-4"><div class="col-md-6"><label class="form-label fw-bold" style="font-size:0.85rem;">Price Range Filter</label><input type="range" class="form-range" min="1000" max="30000" value="30000" oninput="document.getElementById('ssPriceVal').textContent='PKR ' + parseInt(this.value).toLocaleString()"><div class="price-range-display" id="ssPriceVal">PKR 30,000</div></div></div>
+                    <div class="row g-4">
+                        <div class="col-lg-4 col-md-6"><div class="product-card"><div class="product-img-wrap"><img src="https://cdn.shopify.com/s/files/1/0740/1753/8280/files/R-48_2.jpg?v=1776425841" alt="Sana Safinaz Embroidered Lawn 3PC H241-016B" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>Sana Safinaz</span></div>'"><span class="product-badge">Unstitched</span></div><div class="product-info"><div class="product-brand">Sana Safinaz</div><div class="product-name">Embroidered Lawn 3PC H241-016B</div><div class="product-sizes"><button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button></div><div class="product-price">PKR 6,990</div><button class="btn-add-cart" onclick="addToCart()">Add to Cart</button></div></div></div>
+                        <div class="col-lg-4 col-md-6"><div class="product-card"><div class="product-img-wrap"><img src="https://cdn.shopify.com/s/files/1/0740/1753/8280/files/SS23GEXE413_1.jpg?v=1776423468" alt="Sana Safinaz Digital Printed Lawn 3PC" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>Sana Safinaz</span></div>'"><span class="product-badge">Unstitched</span></div><div class="product-info"><div class="product-brand">Sana Safinaz</div><div class="product-name">Digital Printed Lawn 3PC</div><div class="product-sizes"><button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button></div><div class="product-price">PKR 4,990</div><button class="btn-add-cart" onclick="addToCart()">Add to Cart</button></div></div></div>
+                        <div class="col-lg-4 col-md-6"><div class="product-card"><div class="product-img-wrap"><img src="https://cdn.shopify.com/s/files/1/0740/1753/8280/files/FW23STP502_1.jpg?v=1776422916" alt="Sana Safinaz Luxury Lawn Embroidered 3PC" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>Sana Safinaz</span></div>'"><span class="product-badge">Unstitched</span></div><div class="product-info"><div class="product-brand">Sana Safinaz</div><div class="product-name">Luxury Lawn Embroidered 3PC</div><div class="product-sizes"><button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button></div><div class="product-price">PKR 8,490</div><button class="btn-add-cart" onclick="addToCart()">Add to Cart</button></div></div></div>
+                        <div class="col-lg-4 col-md-6"><div class="product-card"><div class="product-img-wrap"><img src="https://cdn.shopify.com/s/files/1/0740/1753/8280/files/SS23GBSP177_1.jpg?v=1776422530" alt="Sana Safinaz Stitched Printed 2PC S241-017A" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>Sana Safinaz</span></div>'"><span class="product-badge">Stitched</span></div><div class="product-info"><div class="product-brand">Sana Safinaz</div><div class="product-name">Stitched Printed 2PC</div><div class="product-sizes"><button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button></div><div class="product-price">PKR 4,290</div><button class="btn-add-cart" onclick="addToCart()">Add to Cart</button></div></div></div>
+                        <div class="col-lg-4 col-md-6"><div class="product-card"><div class="product-img-wrap"><img src="https://cdn.shopify.com/s/files/1/0740/1753/8280/files/FW23MHY504_1.jpg?v=1776422248" alt="Sana Safinaz Premium Embroidered 3PC" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>Sana Safinaz</span></div>'"><span class="product-badge">Unstitched</span></div><div class="product-info"><div class="product-brand">Sana Safinaz</div><div class="product-name">Premium Embroidered 3PC</div><div class="product-sizes"><button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button></div><div class="product-price">PKR 7,490</div><button class="btn-add-cart" onclick="addToCart()">Add to Cart</button></div></div></div>
+                        <div class="col-lg-4 col-md-6"><div class="product-card"><div class="product-img-wrap"><img src="https://cdn.shopify.com/s/files/1/0740/1753/8280/files/SS23SGE350_1_1af051dd-1d99-4289-bd16-fab5279bae55.jpg?v=1776412003" alt="Sana Safinaz Stitched Lawn Kurta" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>Sana Safinaz</span></div>'"><span class="product-badge">Stitched</span></div><div class="product-info"><div class="product-brand">Sana Safinaz</div><div class="product-name">Stitched Lawn Kurta</div><div class="product-sizes"><button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button></div><div class="product-price">PKR 3,490</div><button class="btn-add-cart" onclick="addToCart()">Add to Cart</button></div></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="jjModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-mosque me-2"></i>Junaid Jamshed Collection</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row mb-4"><div class="col-md-6"><label class="form-label fw-bold" style="font-size:0.85rem;">Price Range Filter</label><input type="range" class="form-range" min="1000" max="30000" value="30000" oninput="document.getElementById('jjPriceVal').textContent='PKR ' + parseInt(this.value).toLocaleString()"><div class="price-range-display" id="jjPriceVal">PKR 30,000</div></div></div>
+                    <div class="row g-4">
+                        <div class="col-lg-4 col-md-6"><div class="product-card"><div class="product-img-wrap"><img src="https://www.junaidjamshed.com/media/catalog/product/j/j/jjlt-26-8104.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=240&canvas=240:300" alt="J. Printed Lawn 3 Piece Suit" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>J.</span></div>'"><span class="product-badge">Stitched</span></div><div class="product-info"><div class="product-brand">Junaid Jamshed</div><div class="product-name">Printed Lawn 3 Piece Suit</div><div class="product-sizes"><button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button></div><div class="product-price">PKR 5,290</div><button class="btn-add-cart" onclick="addToCart()">Add to Cart</button></div></div></div>
+                        <div class="col-lg-4 col-md-6"><div class="product-card"><div class="product-img-wrap"><img src="https://www.junaidjamshed.com/media/catalog/product/j/j/jjlt-26-8103.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=240&canvas=240:300" alt="J. Embroidered Lawn 3PC Stitched" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>J.</span></div>'"><span class="product-badge">Stitched</span></div><div class="product-info"><div class="product-brand">Junaid Jamshed</div><div class="product-name">Embroidered Lawn 3PC Stitched</div><div class="product-sizes"><button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button></div><div class="product-price">PKR 6,490</div><button class="btn-add-cart" onclick="addToCart()">Add to Cart</button></div></div></div>
+                        <div class="col-lg-4 col-md-6"><div class="product-card"><div class="product-img-wrap"><img src="https://www.junaidjamshed.com/media/catalog/product/j/j/jjlt-26-8102.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=240&canvas=240:300" alt="J. Printed Cambric 2PC Suit" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>J.</span></div>'"><span class="product-badge">Stitched</span></div><div class="product-info"><div class="product-brand">Junaid Jamshed</div><div class="product-name">Printed Cambric 2PC Suit</div><div class="product-sizes"><button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button></div><div class="product-price">PKR 3,790</div><button class="btn-add-cart" onclick="addToCart()">Add to Cart</button></div></div></div>
+                        <div class="col-lg-4 col-md-6"><div class="product-card"><div class="product-img-wrap"><img src="https://www.junaidjamshed.com/media/catalog/product/j/j/jjlt-26-8101.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=240&canvas=240:300" alt="J. Unstitched Lawn 3PC - Floral" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>J.</span></div>'"><span class="product-badge">Unstitched</span></div><div class="product-info"><div class="product-brand">Junaid Jamshed</div><div class="product-name">Unstitched Lawn 3PC - Floral</div><div class="product-sizes"><button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button></div><div class="product-price">PKR 4,590</div><button class="btn-add-cart" onclick="addToCart()">Add to Cart</button></div></div></div>
+                        <div class="col-lg-4 col-md-6"><div class="product-card"><div class="product-img-wrap"><img src="https://www.junaidjamshed.com/media/catalog/product/j/j/jjlt-26-8099.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=240&canvas=240:300" alt="J. Embroidered 3PC Unstitched" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>J.</span></div>'"><span class="product-badge">Unstitched</span></div><div class="product-info"><div class="product-brand">Junaid Jamshed</div><div class="product-name">Embroidered 3PC Unstitched</div><div class="product-sizes"><button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button></div><div class="product-price">PKR 5,790</div><button class="btn-add-cart" onclick="addToCart()">Add to Cart</button></div></div></div>
+                        <div class="col-lg-4 col-md-6"><div class="product-card"><div class="product-img-wrap"><img src="https://www.junaidjamshed.com/media/catalog/product/2/5/25-3562_1_.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=240&canvas=240:300" alt="J. Dyed Kurta Premium Cotton" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>J.</span></div>'"><span class="product-badge">Stitched</span></div><div class="product-info"><div class="product-brand">Junaid Jamshed</div><div class="product-name">Dyed Kurta Premium Cotton</div><div class="product-sizes"><button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button></div><div class="product-price">PKR 2,990</div><button class="btn-add-cart" onclick="addToCart()">Add to Cart</button></div></div></div>
+                        <div class="col-lg-4 col-md-6"><div class="product-card"><div class="product-img-wrap"><img src="https://www.junaidjamshed.com/media/catalog/product/2/5/25-3561-1_1_.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=240&canvas=240:300" alt="J. Festive Embroidered 3PC Suit" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>J.</span></div>'"><span class="product-badge">Stitched</span></div><div class="product-info"><div class="product-brand">Junaid Jamshed</div><div class="product-name">Festive Embroidered 3PC Suit</div><div class="product-sizes"><button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button></div><div class="product-price">PKR 7,990</div><button class="btn-add-cart" onclick="addToCart()">Add to Cart</button></div></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="sayaModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-palette me-2"></i>Saya Collection</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row mb-4"><div class="col-md-6"><label class="form-label fw-bold" style="font-size:0.85rem;">Price Range Filter</label><input type="range" class="form-range" min="1000" max="30000" value="30000" oninput="document.getElementById('sayaPriceVal').textContent='PKR ' + parseInt(this.value).toLocaleString()"><div class="price-range-display" id="sayaPriceVal">PKR 30,000</div></div></div>
+                    <div class="row g-4">
+                        <div class="col-lg-4 col-md-6"><div class="product-card"><div class="product-img-wrap"><img src="https://cdn.shopify.com/s/files/1/0184/5074/3360/files/sp-12327-1thumbnail.jpg?v=1776429547" alt="Saya Printed Lawn 2 Piece Unstitched" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>Saya</span></div>'"><span class="product-badge">Unstitched</span></div><div class="product-info"><div class="product-brand">Saya</div><div class="product-name">Printed Lawn 2 Piece Unstitched</div><div class="product-sizes"><button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button></div><div class="product-price">PKR 2,490</div><button class="btn-add-cart" onclick="addToCart()">Add to Cart</button></div></div></div>
+                        <div class="col-lg-4 col-md-6"><div class="product-card"><div class="product-img-wrap"><img src="https://cdn.shopify.com/s/files/1/0184/5074/3360/files/u01-26010-p04a-1thumbnail.jpg?v=1776426703" alt="Saya Embroidered Lawn 3 Piece Unstitched" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>Saya</span></div>'"><span class="product-badge">Unstitched</span></div><div class="product-info"><div class="product-brand">Saya</div><div class="product-name">Embroidered Lawn 3PC Unstitched</div><div class="product-sizes"><button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button></div><div class="product-price">PKR 4,290</div><button class="btn-add-cart" onclick="addToCart()">Add to Cart</button></div></div></div>
+                        <div class="col-lg-4 col-md-6"><div class="product-card"><div class="product-img-wrap"><img src="https://cdn.shopify.com/s/files/1/0184/5074/3360/files/U01-25412-19BR-1thumbnail.jpg?v=1776425218" alt="Saya Printed Lawn 3PC Suit" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>Saya</span></div>'"><span class="product-badge">Unstitched</span></div><div class="product-info"><div class="product-brand">Saya</div><div class="product-name">Printed Lawn 3PC Suit</div><div class="product-sizes"><button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button></div><div class="product-price">PKR 3,490</div><button class="btn-add-cart" onclick="addToCart()">Add to Cart</button></div></div></div>
+                        <div class="col-lg-4 col-md-6"><div class="product-card"><div class="product-img-wrap"><img src="https://cdn.shopify.com/s/files/1/0184/5074/3360/files/U01-25396-31A-1Thumbnail_fadd38e0-2521-40bb-ab1f-20d2d877b949.jpg?v=1776424130" alt="Saya Stitched Embroidered 2PC Suit" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>Saya</span></div>'"><span class="product-badge">Stitched</span></div><div class="product-info"><div class="product-brand">Saya</div><div class="product-name">Stitched Embroidered 2PC Suit</div><div class="product-sizes"><button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button></div><div class="product-price">PKR 4,990</div><button class="btn-add-cart" onclick="addToCart()">Add to Cart</button></div></div></div>
+                        <div class="col-lg-4 col-md-6"><div class="product-card"><div class="product-img-wrap"><img src="https://cdn.shopify.com/s/files/1/0184/5074/3360/files/sp-12634-1thumbnail_f69e315b-a8ec-4576-b114-5f487f165750.jpg?v=1776412230" alt="Saya Printed Cambric 3PC Stitched" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>Saya</span></div>'"><span class="product-badge">Stitched</span></div><div class="product-info"><div class="product-brand">Saya</div><div class="product-name">Printed Cambric 3PC Stitched</div><div class="product-sizes"><button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button></div><div class="product-price">PKR 5,290</div><button class="btn-add-cart" onclick="addToCart()">Add to Cart</button></div></div></div>
+                        <div class="col-lg-4 col-md-6"><div class="product-card"><div class="product-img-wrap"><img src="https://cdn.shopify.com/s/files/1/0184/5074/3360/files/sp-10985-1thumbnail.jpg?v=1776410074" alt="Saya Digital Print Lawn 2PC" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><i class=\'fas fa-image\'></i><span>Saya</span></div>'"><span class="product-badge">Unstitched</span></div><div class="product-info"><div class="product-brand">Saya</div><div class="product-name">Digital Print Lawn 2PC</div><div class="product-sizes"><button class="size-pill">XS</button><button class="size-pill">S</button><button class="size-pill active">M</button><button class="size-pill">L</button><button class="size-pill">XL</button><button class="size-pill">XXL</button></div><div class="product-price">PKR 2,190</div><button class="btn-add-cart" onclick="addToCart()">Add to Cart</button></div></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-boutique">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 60" height="42" class="mb-3"><defs><linearGradient id="roseGoldFooter" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#C9A96E"/><stop offset="100%" style="stop-color:#F2D4C2"/></linearGradient></defs><text x="28" y="35" font-family="'Playfair Display', Georgia, serif" font-size="28" font-weight="700" fill="#FFFFFF" letter-spacing="1"><tspan fill="url(#roseGoldFooter)">M</tspan>adam's</text><text x="190" y="35" font-family="'Playfair Display', Georgia, serif" font-size="28" font-weight="700" fill="#FFFFFF" letter-spacing="1">Boutique</text><text x="100" y="52" font-family="'Lato', Arial, sans-serif" font-size="10.5" fill="#C9A96E" letter-spacing="3">Where Style Meets Elegance</text></svg>
+                    <p>Your premier destination for authentic Pakistani fashion.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-pinterest-p"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6"><h5>Quick Links</h5><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="collection.html">Collection</a></li><li><a href="brands.html">Brands</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="compare.html">Compare</a></li></ul></div>
+                <div class="col-lg-3 col-md-6"><h5>Our Brands</h5><ul class="footer-links"><li><a href="https://pk.sapphireonline.pk" target="_blank" rel="noopener noreferrer">Sapphire</a></li><li><a href="https://www.mariab.pk" target="_blank" rel="noopener noreferrer">Maria B</a></li><li><a href="https://pk.khaadi.com" target="_blank" rel="noopener noreferrer">Khaadi</a></li><li><a href="https://www.gulahmedshop.com" target="_blank" rel="noopener noreferrer">Gul Ahmed</a></li><li><a href="https://sanasafinaz.com" target="_blank" rel="noopener noreferrer">Sana Safinaz</a></li><li><a href="https://www.junaidjamshed.com" target="_blank" rel="noopener noreferrer">Junaid Jamshed</a></li><li><a href="https://saya.pk" target="_blank" rel="noopener noreferrer">Saya</a></li></ul></div>
+                <div class="col-lg-3 col-md-6"><h5>Customer Care</h5><ul class="footer-links"><li><a href="contact.html">Contact Us</a></li><li><a href="about.html">About Us</a></li><li><a href="#">Shipping Policy</a></li><li><a href="#">Return Policy</a></li><li><a href="#">Privacy Policy</a></li></ul></div>
+            </div>
+            <div class="footer-bottom"><div class="row align-items-center"><div class="col-md-6"><p>&copy; 2024 Madam's Boutique. All Rights Reserved.</p></div><div class="col-md-6"><div class="payment-icons"><div class="payment-icon"><i class="fab fa-cc-visa me-1"></i> Visa</div><div class="payment-icon"><i class="fab fa-cc-mastercard me-1"></i> Mastercard</div><div class="payment-icon">JazzCash</div><div class="payment-icon">EasyPaisa</div></div></div></div></div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></button>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    (function(){
+        var navbar=document.getElementById('mainNavbar'),backToTop=document.getElementById('backToTop'),searchToggle=document.getElementById('searchToggle'),searchOverlay=document.getElementById('searchOverlay'),closeSearch=document.getElementById('closeSearch');
+        window.addEventListener('scroll',function(){navbar.classList.toggle('scrolled',window.scrollY>50);backToTop.classList.toggle('show',window.scrollY>400);});
+        backToTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+        searchToggle.addEventListener('click',function(e){e.preventDefault();searchOverlay.classList.add('active');document.getElementById('searchInput').focus();});
+        closeSearch.addEventListener('click',function(){searchOverlay.classList.remove('active');});
+        searchOverlay.addEventListener('click',function(e){if(e.target===searchOverlay)searchOverlay.classList.remove('active');});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')searchOverlay.classList.remove('active');});
+        document.querySelectorAll('.animate-on-scroll').forEach(function(el){new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting)entry.target.classList.add('visible');});},{threshold:0.1}).observe(el);});
+        document.querySelectorAll('.size-pill').forEach(function(pill){pill.addEventListener('click',function(){this.parentElement.querySelectorAll('.size-pill').forEach(function(p){p.classList.remove('active');});this.classList.add('active');});});
+        var cartCount=0;
+        window.addToCart=function(){cartCount++;document.querySelectorAll('.badge').forEach(function(b,i){if(i===2)b.textContent=cartCount;});};
+    })();
+    </script>
+    <script src="app.js"></script>
+</body>
+</html>
